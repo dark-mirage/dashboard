@@ -1,7 +1,6 @@
 import './globals.css';
 import Header from './components/Header.jsx';
-import { LocaleProvider } from './contexts/LocaleContext.jsx';
-import { AuthProvider } from '../app/contexts/AuthContext';
+import ClientProviders from './ClientProvider';
 
 export const metadata = {
   title: 'Dashboard',
@@ -12,17 +11,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <LocaleProvider>
-          {/* <AuthProvider> */}
-            <div className="min-h-screen">
-              <Header />
-              <main className="pt-[100px] flex gap-[30px]">
-                {children}
-              </main>
-              <div className="yellow-glow"></div>
-            </div>
-          {/* </AuthProvider> */}
-        </LocaleProvider>
+        <ClientProviders>
+          <div className="min-h-screen">
+            <Header />
+            <main className="pt-[100px] flex gap-[30px]">
+              {children}
+            </main>
+            <div className="yellow-glow"></div>
+          </div>
+        </ClientProviders>
       </body>
     </html>
   );
