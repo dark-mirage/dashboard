@@ -1,0 +1,10 @@
+{
+  "menu": {
+    "title": "Menu",
+    "profile": "Profile",
+    "promotions": "Promotions",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "settings": "Settings"
+  }
+}

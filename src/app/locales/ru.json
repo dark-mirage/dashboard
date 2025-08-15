@@ -1,0 +1,10 @@
+{
+  "menu": {
+    "title": "Меню",
+    "profile": "Профиль",
+    "promotions": "Акции",
+    "deposit": "Пополнить",
+    "withdraw": "Вывод",
+    "settings": "Настройки"
+  }
+}

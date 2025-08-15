@@ -1,14 +1,14 @@
 
 
 "use client";
-import Header from './components/Header.jsx';
+import Header from '../components/Header.jsx';
 import { useSearchParams } from 'next/navigation';
-import MainMenu from './components/MainMenu.jsx';
-import DashboardTab from './components/Profile/DashboardTab.jsx';
-import DepositTab from './components/Profile/DepositTab.jsx';
-import PromotionsTab from './components/Profile/PromotionsTab.jsx';
-import WithdrawTab from './components/Profile/WithdrawTab.jsx';
-import SettingsTab from './components/Profile/SettingsTab.jsx';
+import MainMenu from '../components/MainMenu.jsx';
+import DashboardTab from '../components/Profile/DashboardTab.jsx';
+import DepositTab from '../components/Profile/DepositTab.jsx';
+import PromotionsTab from '../components/Profile/PromotionsTab.jsx';
+import WithdrawTab from '../components/Profile/WithdrawTab.jsx';
+import SettingsTab from '../components/Profile/SettingsTab.jsx';
 
 export default function ProfileLayout() {
   const searchParams = useSearchParams();
@@ -33,10 +33,10 @@ export default function ProfileLayout() {
    return (
       <>
         <Header />
-        <main className='flex pt-[100px] '>
+        <main className='flex pt-[100px] w-full'>
           <MainMenu />
-          <div className="flex-1 p-4 bg-card"> 
-            {renderTab()}  {/* Вот это пропущено! */}
+          <div className="flex-1 p-4 pt-0">  
+            {renderTab()}  
           </div>
         </main>
       </>
