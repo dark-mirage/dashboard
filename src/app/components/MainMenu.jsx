@@ -7,34 +7,39 @@ import { useLocale } from '../contexts/LocaleContext.jsx';
 export default function MainMenu() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { t } = useLocale();
+  // const { t } = useLocale();
   
   const activeTab = searchParams.get('tab') || 'profile';
 
   const menuItems = [
     {
       key: 'profile',
-      label: t('menu.profile'),
+      icon: '👤',
+      label: ('menu.profile'),
       
     },
     {
       key: 'promotions',
-      label: t('menu.promotions'),
+      icon: '🎁',
+      label: ('menu.promotions'),
       
     },
     {
       key: 'deposit',
-      label: t('menu.deposit'),
+      icon: '💳',
+      label: ('menu.deposit'),
       
     },
     {
       key: 'withdraw',
-      label: t('menu.withdraw'),
+      icon: '💸',
+      label: ('menu.withdraw'),
      
     },
     {
       key: 'settings',
-      label: t('menu.settings'),
+      icon: '⚙️',
+      label: ('menu.settings'),
       
     }
   ];
@@ -51,9 +56,9 @@ export default function MainMenu() {
   };
 
   return (
-    <div className="w-96 mx-auto bg-card p-4 h-fit">
-      <h3 className="text-yellow-400 font-semibold mb-6 text-lg text-center">
-        {t('menu.title')}
+    <div className="mx-auto bg-card p-4 h-fit">
+      <h3 className="text-yellow-400 font-semibold !mb-[18px] text-lg text-center">
+        {('menu.title')}
       </h3>
       
       <nav className="space-y-2 flex flex-col items-center">
@@ -62,13 +67,13 @@ export default function MainMenu() {
             key={item.key}
             onClick={() => handleTabChange(item.key)}
             onKeyDown={(e) => handleKeyDown(e, item.key)}
-            className={`menu-item w-full text-left max-w-[260px] ${
+            className={`menu-item bg-card px-[20px] py-[10px] !rounded-[20px] flex gap-[10px]  w-full text-left max-w-[260px] ${
               activeTab === item.key ? 'active' : ''
             }`}
             aria-current={activeTab === item.key ? 'page' : undefined}
           >
             {item.icon}
-            <span>{item.label}</span>
+            <span className='text-[18px]'>{item.label}</span>
           </button>
         ))}
       </nav>

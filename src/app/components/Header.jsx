@@ -10,7 +10,7 @@ import { useLocale } from '../contexts/LocaleContext.jsx';
 
 export default function Header() {
   const router = useRouter();
-  const { t, locale, setLocale } = useLocale();
+  // const { t, locale, setLocale } = useLocale();
   // const { user, logout } = useAuth();
   const user = null;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +42,7 @@ export default function Header() {
             {/* Language Selector */}
             <div className="relative flex items-center gap-[30px]">
               <select
-                value={locale}
+                // value={locale}
                 onChange={(e) => setLocale(e.target.value)}
                 className="bg-transparent border border-gray-600 rounded px-3 py-1 text-sm text-white focus:outline-none focus:border-yellow-400"
               >
@@ -76,13 +76,13 @@ export default function Header() {
                   href="/login"
                   className="text-gray-300 hover:text-white text-sm border border-gray-600 px-3 py-1 rounded hover:border-yellow-400 transition-colors"
                 >
-                  {t('auth.login')}
+                 auth.login
                 </Link>
                 <Link
                   href="/register"
                   className="bg-yellow-400 text-black px-4 py-1 rounded font-medium hover:bg-yellow-300 transition-colors text-sm"
                 >
-                  {t('auth.register')}
+                  auth.register
                 </Link>
               </div>
             )}

@@ -42,13 +42,13 @@ export default function SettingsTab({ userData }) {
     <div className='flex gap-[30px]'>
     <div className="flex flex-col bg-card gap-5 p-2.5 border border-[var(--glass-border)] rounded-[20px] w-full">
       <h2 className="text-2xl font-bold text-yellow-400">Личные данные</h2>
-      <div>
+      <div className='flex flex-col gap-[20px] bg-card px-2 py-4'>
         <SettingsForm
           fields={[
             { 
               name: 'email', 
               label: 'Электронная почта', 
-              value: userData?.email || '', 
+              value: userData?.email || 'jklfsfjlka@gmail.com', 
               readOnly: true,
               button: {
                 text: 'Отправить код',
@@ -59,33 +59,60 @@ export default function SettingsTab({ userData }) {
             },
             { name: 'firstName', label: 'Имя', value: userData?.firstName || '', placeholder: 'Введите ваше имя' },
             { name: 'lastName', label: 'Фамилия', value: userData?.lastName || '', placeholder: 'Введите вашу фамилию' },
-            { name: 'gender', label: 'Пол', type: 'select', value: userData?.gender || 'Не указано', options: [] },
-            { name: 'country', label: 'Страна', type: 'select', value: userData?.country || 'Германия', options: [] },
+            { 
+              name: 'gender', 
+              label: 'Пол', 
+              type: 'select', 
+              value: userData?.gender || 'Не указано', 
+              options: [
+                { value: 'male', label: 'Мужской' },
+                { value: 'female', label: 'Женский' },
+              ]
+            },
+            { 
+              name: 'country', 
+              label: 'Страна', 
+              type: 'select', 
+              value: userData?.country || 'Германия', 
+              options: [
+                { value: 'germany', label: 'Германия' },
+                { value: 'france', label: 'Франция' },
+                { value: 'spain', label: 'Испания' },
+                { value: 'italy', label: 'Италия' },
+                { value: 'netherlands', label: 'Нидерланды' },
+                { value: 'belgium', label: 'Бельгия' },
+                { value: 'austria', label: 'Австрия' },
+                { value: 'switzerland', label: 'Швейцария' },
+                { value: 'sweden', label: 'Швеция' },
+                { value: 'denmark', label: 'Дания' },
+              ]
+            },
             { name: 'city', label: 'Город', value: userData?.city || '', placeholder: 'Город' },
             { name: 'address', label: 'Адрес', value: userData?.address || '', placeholder: 'Адрес' },
             { name: 'postalCode', label: 'Почтовый индекс', value: userData?.postalCode || '', placeholder: 'Почтовый индекс' },
-            { label: 'Телефон', name: 'phone', type: 'text', value: (userData?.phone ?? 'Телефон').toString() }
+            { label: 'Телефон', name: 'phone', type: 'text', value: (userData?.phone ?? '94323484').toString() }
           ]}
         />
-        <button>Сохранить изменения</button>
-        <div className="bg-[#1a1a1d] p-4 rounded-2xl border border-gray-700 w-full max-w-2xl">
-          {/* Жёлтая метка */}
-          <span className="inline-block bg-yellow-400 text-black font-semibold text-sm px-3 py-1 rounded">
+        <button className='button-yellow bg-card w-full px-4 py-[10px] text-yellow-400 text-center '>Сохранить изменения</button>
+        <div className="bg-card p-4 rounded-2xl w-full">
+
+
+          <span className="inline-block bg-yellow-400 text-black mb-[18px] font-semibold text-sm px-3 py-1 rounded">
             Лимит на депозит (EUR)
           </span>
 
-          {/* Поле ввода и кнопка */}
-          <div className="flex items-center gap-4 mt-4">
-            <div className="flex items-center w-full bg-[#1a1a1d] border border-gray-700 rounded-xl px-4 py-2 text-white">
+
+          <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-[10px] text-gray-300 items-center w-[70%] bg-[#1a1a1d] rounded-xl">
+              <span className='w-full'>Лимит на депозит</span>
               <input
                 type="number"
-                placeholder="Лимит на депозит (EUR)"
-                className="flex-1 bg-transparent outline-none text-white placeholder-gray-500"
+                placeholder="(EUR)"
+                className="flex-1 w-full px-5 py-2 !pr-[20px] border border-[rgba(39,39,43,255)] bg-transparent rounded-xl outline-none text-white placeholder-gray-500"
               />
-              <span className="text-gray-400 ml-2">EUR</span>
             </div>
 
-            <button className="px-5 py-2 bg-transparent border border-gray-700 rounded-xl text-yellow-400 font-semibold hover:bg-yellow-500 hover:text-black transition">
+            <button className="flex self-end justify-center w-[40%] px-5 py-2 bg-transparent border border-[rgba(39,39,43,255)] rounded-xl text-yellow-400 font-[18px] button-yellow">
               Сохранить изменения
             </button>
           </div>
@@ -93,7 +120,7 @@ export default function SettingsTab({ userData }) {
       </div>
 
     </div>
-    <div className="flex flex-col gap-[20px] py-6">
+    <div className="flex flex-col gap-[20px]">
       <SettingsCard
         badge="Подписки"
         title=""
@@ -128,6 +155,7 @@ export default function SettingsTab({ userData }) {
             description: "Защита аккаунта и транзакций",
             type: "switch",
             enabled: false,
+            className: "border-none",
           },
         ]}
       />
@@ -141,9 +169,12 @@ export default function SettingsTab({ userData }) {
             description: "Заблокировать аккаунт и запретить депозиты",
             type: "switch",
             enabled: false,
+            className: "border-none",
           },
         ]}
-      />
+      >
+
+      </SettingsCard>
     </div>
   </div>
   )

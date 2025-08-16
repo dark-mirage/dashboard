@@ -35,14 +35,14 @@ export default function WithdrawTab() {
     <div className="flex flex-col bg-card gap-5 p-2.5 border border-[var(--glass-border)] rounded-[20px]">
       <h2 className="text-2xl font-bold text-yellow-400">Вывод средств</h2>
       
-      {/* Доступный баланс */}
-      <div className="bg-card backdrop-blur-md bg-opacity-20 p-6 rounded-lg">
+      {/* Баланс */}
+      <div className="bg-[rgba(37,37,40,255)] backdrop-blur-md bg-opacity-20 p-6 rounded-lg">
         <h3 className="text-gray-400 text-sm mb-2">Доступно для вывода</h3>
         <div className="text-white text-2xl font-bold">0.00 €</div>
       </div>
 
       {/* Методы вывода */}
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {withdrawMethods.map((method) => (
           <div
             key={method.id}
@@ -53,7 +53,7 @@ export default function WithdrawTab() {
                 : 'bg-card backdrop-blur-md bg-opacity-20 text-white hover:bg-opacity-30'
             }`}
           >
-            <div className="text-center">
+            <div className="flex flex-col items-center">
               <div className="text-2xl mb-2">{method.icon}</div>
               <h4 className="font-semibold mb-1">{method.name}</h4>
               <p className="text-sm opacity-80">{method.limits}</p>
@@ -63,53 +63,56 @@ export default function WithdrawTab() {
         ))}
       </div>
 
-      {/* Форма вывода */}
+      {/* Форма */}
       {selectedMethod && (
-        <div className="bg-card backdrop-blur-md bg-opacity-20 p-6 rounded-lg">
-          <h3 className="text-white text-lg font-semibold mb-6">
+        <div className="bg-[rgba(37,37,40,255)] backdrop-blur-md bg-opacity-20 p-6 rounded-lg">
+          <h3 className="text-yellow-400 text-lg font-semibold mb-6">
             Вывод на {selectedMethod.name}
           </h3>
 
           <div className="space-y-4">
-            <div>
-              <label className="block text-gray-300 text-sm mb-2">Адрес кошелька</label>
-              <input
-                type="text"
-                value={wallet}
-                onChange={(e) => setWallet(e.target.value)}
-                placeholder="Введите адрес кошелька"
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
-            </div>
+            {/* Адрес */}
+            <input
+              type="text"
+              value={wallet}
+              onChange={(e) => setWallet(e.target.value)}
+              placeholder="Введите адрес кошелька"
+              className="w-full px-4 py-3 bg-[rgba(29,29,34,255)] border border-[rgba(58,56,53,255)] rounded-[18px] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            />
 
-            <div>
-              <label className="block text-gray-300 text-sm mb-2">
-                Сумма ({selectedMethod.limits})
-              </label>
-              <input
-                type="number"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-                placeholder="Введите сумму"
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
-            </div>
+            {/* Сумма */}
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              placeholder={`Сумма (${selectedMethod.limits})`}
+              className="w-full px-4 py-3 bg-[rgba(29,29,34,255)] border border-[rgba(58,56,53,255)] rounded-[18px] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            />
 
-            <div className="bg-gray-800 p-4 rounded">
-              <div className="flex justify-between text-sm mb-2">
+            {/* Инфо */}
+            <div className="bg-[rgba(29,29,34,255)] border border-[rgba(58,56,53,255)] p-4 rounded-[18px] text-sm">
+              <div className="flex justify-between mb-2">
                 <span className="text-gray-400">К выводу:</span>
                 <span className="text-white">{amount || '0.00'} €</span>
               </div>
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between">
                 <span className="text-gray-400">Комиссия ({selectedMethod.commission}):</span>
                 <span className="text-white">
-                  {amount ? (parseFloat(amount) * 0.005).toFixed(2) : '0.00'} €
+                  {amount ? (parseFloat(amount) * parseFloat(selectedMethod.commission) / 100 || 0).toFixed(2) : '0.00'} €
                 </span>
               </div>
             </div>
 
-            <button className="w-full py-3 bg-yellow-400 text-black font-semibold rounded hover:bg-yellow-500 transition-colors">
+            {/* Кнопки */}
+            <button className="w-full px-4 py-3 bg-[rgba(29,29,34,255)] border border-[rgba(58,56,53,255)] rounded-[18px] button-yellow">
               Вывести средства
+            </button>
+
+            <button
+              onClick={() => setSelectedMethod(null)}
+              className="w-full px-4 py-3 bg-[rgba(29,29,34,255)] border border-[rgba(58,56,53,255)] rounded-[18px] button-yellow"
+            >
+              Отмена
             </button>
           </div>
         </div>

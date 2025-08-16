@@ -33,7 +33,7 @@ export default function ProfileClient() {
   return (
     <>
       <Header />
-      <main className="flex pt-[100px] w-full">
+      <main className="flex pt-[50px] w-full">
         <MainMenu />
         <div className="flex-1 p-4 pt-0">{renderTab()}</div>
       </main>

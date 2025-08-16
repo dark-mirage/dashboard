@@ -57,16 +57,19 @@ export default function DashboardTab() {
               label: 'Реальный баланс', 
               value: `${myUserData.mainBalance.toFixed(2)} €`,
               valueClassName: 'text-xl font-semibold',
+              cardClassName: "bg-[rgba(45,38,31,1)] border border-[rgba(48,43,29,1)]"
             },
             { 
               label: 'Бонусный баланс', 
               value: `${myUserData.bonusBalance.toFixed(2)} €`,
-              valueClassName: 'text-xl font-semibold'
+              valueClassName: 'text-xl font-semibold',
+              cardClassName: "bg-[rgba(45,38,31,1)] border border-[rgba(48,43,29,1)]"
             },
             { 
               label: 'FS', 
               value: `${myUserData.bonusBalance.toFixed(0)}`,
-              valueClassName: 'text-xl font-semibold'
+              valueClassName: 'text-xl font-semibold',
+              cardClassName: "bg-[rgba(45,38,31,1)] border border-[rgba(48,43,29,1)]"
             }
           ]}
           gridCols="3"
@@ -78,46 +81,52 @@ export default function DashboardTab() {
         items={[
           {
             label: 'Прогресс до уровня 2',
-            value: '50%',
             valueClassName: 'text-xl font-semibold'
           }
         ]}
         gridCols="1"
       />
         
-      {/* Реферальная ссылка */}
-        <h4 className="text-gray-400 text-sm mb-4">Реферальная ссылка</h4>
-        <div className="flex space-x-2">
-          <input
-            type="text"
-            value={myUserData.referralLink}
-            readOnly
-            className="flex-1 px-3 py-2 bg-gray-800 border border-gray-600 rounded text-white text-sm"
-          />
-          <button
-            onClick={copyReferralLink}
-            className="px-4 py-2 bg-yellow-400 text-black rounded font-semibold hover:bg-yellow-500 transition-colors"
-          >
-            {copied ? 'Скопировано!' : 'Копировать'}
-          </button>
-        </div>
-
-        <div className="flex justify-between items-center mb-4">
-          <h4 className="text-yellow-400 text-lg">История транзакций</h4>
-          <div className="flex space-x-2">
-            <select className="px-3 py-1 bg-gray-800 border border-gray-600 rounded text-white text-sm">
-              <option value="all">Все</option>
-              <option value="deposit">Пополнения</option>
-              <option value="withdraw">Выводы</option>
-            </select>
-            <select className="px-3 py-1 bg-gray-800 border border-gray-600 rounded text-white text-sm">
-              <option value="date_desc">Сортировка ↓</option>
-              <option value="date_asc">Сортировка ↑</option>
-            </select>
+        <div className="flex flex-col bg-[var(--element-color)] px-5 py-[14px] rounded-[10px] gap-[8px] space-x-2">
+        <h4 className="text-gray-400 text-sm ">Реферальная ссылка</h4>
+          <div className='flex gap-[10px]'>
+            <input
+              type="text"
+              value={myUserData.referralLink}
+              readOnly
+              className="flex-1 bg-[rgba(29,29,34,255)] px-3 py-2 border border-gray-600 rounded-[12px] text-white text-sm input-glass"
+            />
+            <button
+              onClick={copyReferralLink}
+              className="px-4 py-2 bg-[rgba(29,29,34,255)] text-black rounded font-semibold button-yellow"
+            >
+              {copied ? 'Скопировано!' : 'Копировать'}
+            </button>
           </div>
         </div>
-        <div className="text-center text-gray-400 py-8">
-          Нет транзакций
+
+        <div className="flex flex-col gap-[18px] bg-[var(--element-color)] px-3 py-[14px] pb-[20px] rounded-[10px] items-center mb-4">
+          <h4 className="w-full text-left text-yellow-400 text-lg">История транзакций</h4>
+          <div className="flex justify-between bg-[#3b3a3e] px-2 py-[10px] rounded-[10px] w-full space-x-2">
+            <label className='flex gap-[10px]'>
+              <span className='flex items-center'>Тип:</span>
+              <select className="py-[10px] px-[0px] text-[16px] text-center text-yellow-400 rounded-[20px] w-[80px] py-1 bg-[rgba(38,38,43,255)] border border-gray-600 rounded text-white text-sm">
+                <option value="all">Все</option>
+                <option value="deposit">Пополнения</option>
+                <option value="withdraw">Выводы</option>
+              </select>
+            </label>
+            <label className='flex gap-[10px]'>
+              <span className='flex items-center'>Сортировка:</span>
+              <select className="py-[10px] px-[0px] text-[16px] text-center text-yellow-400 rounded-[20px] w-full py-1 bg-[rgba(38,38,43,255)] border border-gray-600 rounded text-white text-sm">
+                <option value="date_desc">Сортировка ↓</option>
+                <option value="date_asc">Сортировка ↑</option>
+              </select>
+            </label>
+          </div>
+          <div className="text-center text-gray-400">
+            Нет транзакций
+          </div>
         </div>
     </div>
   )

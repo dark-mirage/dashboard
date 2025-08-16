@@ -1,22 +1,15 @@
 'use client';
+
 import { createContext, useContext, useState } from 'react';
-import en from '../locales/en.json';
-import ru from '../locales/ru.json';
 
 const LocaleContext = createContext();
-
-const translations = { en, ru };
 
 export function LocaleProvider({ children }) {
   const [locale, setLocale] = useState('en');
 
   const t = (key) => {
-    const keys = key.split('.');
-    let value = translations[locale];
-    for (const k of keys) {
-      value = value?.[k];
-    }
-    return value || key;
+    const translations = { en: { hello: 'Hello' }, ru: { hello: 'Привет' } };
+    return translations[locale][key] || key;
   };
 
   return (
@@ -26,6 +19,4 @@ export function LocaleProvider({ children }) {
   );
 }
 
-export function useLocale() {
-  return useContext(LocaleContext);
-}
+export const useLocale = () => useContext(LocaleContext);

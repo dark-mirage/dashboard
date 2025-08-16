@@ -3,15 +3,15 @@ import Image from "next/image";
 
 export default function PromotionsCard({ img, span, title, button }) {
   return (
-    <div className="flex flex-col gap-[10px] p-4 border border-[var(--glass-border)] rounded-[20px]">
+    <div className="flex flex-col gap-[10px] min-w-[300px] p-4 border border-[var(--glass-border)] rounded-[20px]">
     <div className="relative max-w-xs rounded-lg overflow-hidden shadow-lg bg-gradient-to-br from-purple-900 to-blue-800 text-white">
       <div className="relative">
         <Image
           src={img}
           alt={title}
           width={320}
-          height={180}
-          className="w-full object-cover min-w-[250px]"
+          height={300}
+          className="w-full h-[200px] object-cover min-w-[250px]"
         />
 
         <div className="absolute top-2 right-1 bg-yellow-400 text-black font-bold px-3 py-1 rounded-full text-sm">
@@ -25,7 +25,7 @@ export default function PromotionsCard({ img, span, title, button }) {
 
     </div>
     <div className=" text-center">
-      <button className="border border-[var(--glass-border)] w-full pr-[8px] pl-[8px] rounded-lg text-yellow-400 font-bold py-2 px-6 rounded-full transition-colors">
+      <button className="border border-[var(--glass-border)] w-full pr-[8px] pl-[8px] rounded-lg button-yellow font-bold py-2 px-6 rounded-full ">
         {button}
       </button>
     </div>

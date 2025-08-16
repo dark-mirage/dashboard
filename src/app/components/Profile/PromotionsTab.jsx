@@ -25,13 +25,13 @@ export default function PromotionsTab() {
       <h2 className="text-2xl font-bold text-yellow-400">Доступные бонусы</h2>
       <div className="flex gap-[30px]">
         <PromotionsCard
-          img="/bonus-image.jpg"
+          img="/images/bonus.jpg"
           span="150% + 0 FS"
           title="Приветственный бонус - 150%"
           button="Активировать"
         />
         <PromotionsCard
-          img="/bonus-image.jpg"
+          img="/images/bonus.jpg"
           span="150% + 0 FS"
           title="Приветственный бонус - 150%"
           button="Активировать"

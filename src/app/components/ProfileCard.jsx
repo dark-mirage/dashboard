@@ -10,7 +10,7 @@ export default function ProfileCard({ items = [], gridCols = "1", className = ""
       {items.map((item, idx) => (
         <div
           key={idx}
-          className={`p-4 rounded-lg flex flex-col items-start ${item.cardClassName || "bg-gray-800"}`}
+          className={`p-4 rounded-lg flex flex-col items-start ${item.cardClassName || "bg-[var(--element-color)]"}`}
         >
           <span className={item.labelClassName || "text-gray-400"}>
             {item.label}

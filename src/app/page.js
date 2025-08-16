@@ -33,7 +33,7 @@ export default function ProfileLayout() {
    return (
       <>
         <Header />
-        <main className='flex pt-[100px] '>
+        <main className='flex gap-[20px] pt-[100px] '>
           <MainMenu />
           <div className="flex-1 p-4 bg-card"> 
             {renderTab()}  {/* Вот это пропущено! */}
