@@ -1,22 +1,25 @@
 'use client';
 
 import { createContext, useContext, useState } from 'react';
+import ru from '../locales/ru.json';
+import en from '../locales/en.json';
+import az from '../locales/az.json';
+
+const messagesData = { ru, en, az };
 
 const LocaleContext = createContext();
 
-export function LocaleProvider({ children }) {
-  const [locale, setLocale] = useState('en');
+export const LocaleProvider = ({ children }) => {
+  const [locale, setLocale] = useState('ru');
+  const messages = messagesData[locale];
 
-  const t = (key) => {
-    const translations = { en: { hello: 'Hello' }, ru: { hello: 'Привет' } };
-    return translations[locale][key] || key;
-  };
+  const changeLocale = (newLocale) => setLocale(newLocale);
 
   return (
-    <LocaleContext.Provider value={{ t, locale, setLocale }}>
+    <LocaleContext.Provider value={{ locale, changeLocale, messages }}>
       {children}
     </LocaleContext.Provider>
   );
-}
+};
 
 export const useLocale = () => useContext(LocaleContext);

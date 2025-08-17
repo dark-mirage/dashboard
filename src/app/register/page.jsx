@@ -7,7 +7,7 @@ export default function RegisterForm() {
   const [password, setPassword] = useState("");
   const [country, setCountry] = useState("");
   const [currency, setCurrency] = useState("");
-  const [phoneCode, setPhoneCode] = useState("");
+  const [phoneCode, setPhoneCode] = useState("+7");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
 
@@ -27,18 +27,18 @@ export default function RegisterForm() {
   };
 
   return (
-    <div className="w-full flex justify-center items-center justify-center p-4 h-screen">
-      <div className="max-w-md">
-        <div className="bg-card rounded-[30px] flex flex-col gap-2.5  backdrop-blur-sm  border border-gray-700/50 p-8 shadow-2xl">
-          <h2 className="text-2xl font-bold text-yellow-500 text-center mb-8">Регистрация</h2>
+    <div className="w-full flex justify-center items-center p-4 min-h-screen">
+      <div className="w-full max-w-md">
+        <div className="bg-card rounded-2xl md:rounded-[30px] flex flex-col gap-2.5 backdrop-blur-sm border border-gray-700/50 p-6 md:p-8 shadow-2xl">
+          <h2 className="text-xl md:text-2xl font-bold text-yellow-500 text-center mb-6 md:mb-8">Регистрация</h2>
           
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             <div>
               <input 
                 placeholder="Имя пользователя" 
                 value={name} 
                 onChange={e => setName(e.target.value)}
-                className="w-full bg-card rounded px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors"
+                className="w-full bg-card rounded px-4 py-2 md:py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors text-sm md:text-base"
               />
             </div>
             
@@ -47,7 +47,7 @@ export default function RegisterForm() {
                 placeholder="Email" 
                 value={email} 
                 onChange={e => setEmail(e.target.value)}
-                className="w-full bg-card rounded px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors"
+                className="w-full bg-card rounded px-4 py-2 md:py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors text-sm md:text-base"
               />
             </div>
             
@@ -57,7 +57,7 @@ export default function RegisterForm() {
                 type="password" 
                 value={password} 
                 onChange={e => setPassword(e.target.value)}
-                className="w-full bg-card rounded px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors"
+                className="w-full bg-card rounded px-4 py-2 md:py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors text-sm md:text-base"
               />
             </div>
             
@@ -65,7 +65,7 @@ export default function RegisterForm() {
               <select 
                 value={country} 
                 onChange={e => setCountry(e.target.value)}
-                className="w-full bg-card text-yellow-400 rounded px-4 py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none"
+                className="w-full bg-card text-yellow-400 rounded px-4 py-2 md:py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none text-sm md:text-base"
               >
                 <option value="" className="text-gray-400">Страна</option>
                 <option value="uz">Узбекистан</option>
@@ -80,7 +80,7 @@ export default function RegisterForm() {
               <select 
                 value={currency} 
                 onChange={e => setCurrency(e.target.value)}
-                className="w-full bg-card text-yellow-400 rounded px-4 py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none"
+                className="w-full bg-card text-yellow-400 rounded px-4 py-2 md:py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none text-sm md:text-base"
               >
                 <option value="" className="text-gray-400">Валюта</option>
                 <option value="uzs">UZS</option>
@@ -94,7 +94,7 @@ export default function RegisterForm() {
               <select 
                 value={phoneCode} 
                 onChange={e => setPhoneCode(e.target.value)}
-                className="w-24 bg-card text-yellow-400 rounded px-3 py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none text-center"
+                className="w-20 md:w-24 bg-card text-yellow-400 rounded px-2 md:px-3 py-2 md:py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none text-sm md:text-base text-center"
               >
                 <option value="+7">+7</option>
                 <option value="+998">+998</option>
@@ -105,21 +105,21 @@ export default function RegisterForm() {
                 placeholder="номер телефона" 
                 value={phoneNumber} 
                 onChange={e => setPhoneNumber(e.target.value)}
-                className="flex-1 bg-card text-yellow-400 rounded px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors"
+                className="flex-1 bg-card text-yellow-400 rounded px-4 py-2 md:py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors text-sm md:text-base"
               />
             </div>
             
             <button 
               onClick={handleRegister}
-              className="w-full bg-card text-yellow-400 text-black font-medium py-3 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+              className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 md:py-3 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-800 text-sm md:text-base"
             >
               Зарегистрироваться
             </button>
           </div>
           
           {message && (
-            <div className="mt-4 p-3 bg-card rounded text-center">
-              <p className="text-gray-300 text-sm">{message}</p>
+            <div className="mt-3 md:mt-4 p-2 md:p-3 bg-card rounded text-center">
+              <p className="text-gray-300 text-xs md:text-sm">{message}</p>
             </div>
           )}
         </div>

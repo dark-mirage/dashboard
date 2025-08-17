@@ -1,4 +1,8 @@
 {
+  "auth": {
+    "login": "Log in",
+    "register": "Registration"
+  },
   "menu": {
     "title": "Menu",
     "profile": "Profile",
@@ -6,5 +10,87 @@
     "deposit": "Deposit",
     "withdraw": "Withdraw",
     "settings": "Settings"
+  },
+  "header": {
+    "login": "Login",
+    "register": "Sign Up",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "2fa_code": "2FA Code"
+  },
+  "dashboard": {
+      "personalAccount": "Personal Account",
+      "username": "Username:",
+      "country": "Country:",
+      "phone": "Phone:",
+      "loyaltyLevel": "Loyalty Level:",
+      "accountCurrency": "Account Currency",
+      "loyaltyPoints": "Loyalty Points:",
+      "realBalance": "Real Balance",
+      "bonusBalance": "Bonus Balance",
+      "fs": "FS",
+      "progressToLevel": "Progress to Level 2",
+      "referralLink": "Referral Link",
+      "copy": "Copy",
+      "copied": "Copied!",
+      "transactionHistory": "Transaction History",
+      "type": "Type:",
+      "all": "All",
+      "deposit": "Deposits",
+      "withdraw": "Withdrawals",
+      "sort": "Sort:",
+      "sortDesc": "Sort ↓",
+      "sortAsc": "Sort ↑",
+      "noTransactions": "No transactions"
+    },
+  "userData": {
+    "username": "user1",
+    "country": "Germany"
+  },
+  "promo": {
+    "tabTitle": "Available Bonuses",
+    "cards": [
+      {
+        "span": "150% + 0 FS",
+        "title": "Welcome Bonus - 150%",
+        "button": "Activate"
+      },
+      {
+        "span": "50% + 0 FS",
+        "title": "Welcome Bonus - 50%",
+        "button": "Activate"
+      }
+    ]
+  },
+  "payment": {
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "availableToWithdraw": "Available to withdraw",
+    "min": "Min",
+    "max": "Max",
+    "limits": "Limits",
+    "commission": "Commission",
+    "enterWalletAddress": "Enter wallet address",
+    "amount": "Amount",
+    "toWithdraw": "To withdraw",
+    "cancel": "Cancel",
+    "withdrawTo": "Withdraw to",
+    "cryptoBot": "Popular",
+    "freekassa": "Freekassa",
+    "inDevelopment": "In development",
+    "PayPal": "PayPal",
+    "Visa": "Visa",
+    "MasterCard": "MasterCard",
+    "Qiwi": "Qiwi",
+    "Bitcoin": "Bitcoin",
+    "withdraw": {
+      "title": "Withdraw funds"
+    }
   }
 }
+
+  

@@ -8,7 +8,7 @@ import WithdrawTab from './WithdrawTab'
 import SettingsTab from './SettingsTab'
 
 export default function ProfileLayout() {
-  const [activeTab, setActiveTab] = useState('profile') // Всегда начинаем с первого таба
+  const [activeTab, setActiveTab] = useState('profile')
   const [userData, setUserData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)

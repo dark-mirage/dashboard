@@ -27,20 +27,20 @@ export default function SettingsForm({ fields }) {
       <div className="grid grid-cols-1 gap-6">
       <div>
         <label className="block text-gray-300 text-sm mb-2">{firstField.label}</label>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center flex-col sm:flex-row">
           <input
             type={firstField.type || 'text'}
             name={firstField.name}
             value={formData[firstField.name]}
             onChange={handleInputChange}
             placeholder={firstField.placeholder || ''}
-            className="flex-1 px-3 py-2 bg-card border rounded text-white placeholder-gray-400"
+            className="flex-1 px-3 py-2 w-full sm:w-max bg-card border rounded text-white placeholder-gray-400"
             readOnly={firstField.readOnly || false}
           />
           {firstField.button && (
             <button
               onClick={firstField.button.onClick}
-              className="px-4 py-2 bg-card rounded font-semibold button-yellow"
+              className="px-4 py-2 self-start  bg-card rounded font-semibold button-yellow"
             >
               {firstField.button.text}
             </button>

@@ -1,4 +1,8 @@
 {
+  "auth": {
+    "login": "Войти",
+    "register": "Регистрация"
+  },
   "menu": {
     "title": "Меню",
     "profile": "Профиль",
@@ -6,5 +10,74 @@
     "deposit": "Пополнить",
     "withdraw": "Вывод",
     "settings": "Настройки"
+  },
+  "dashboard": {
+    "personalAccount": "Личный кабинет",
+    "username": "Имя пользователя:",
+    "country": "Страна:",
+    "phone": "Телефон:",
+    "loyaltyLevel": "Уровень лояльности:",
+    "accountCurrency": "Валюта аккаунта",
+    "loyaltyPoints": "Очки лояльности:",
+    "realBalance": "Реальный баланс",
+    "bonusBalance": "Бонусный баланс",
+    "fs": "FS",
+    "progressToLevel": "Прогресс до уровня 2",
+    "referralLink": "Реферальная ссылка",
+    "copy": "Копировать",
+    "copied": "Скопировано!",
+    "transactionHistory": "История транзакций",
+    "type": "Тип:",
+    "all": "Все",
+    "deposit": "Пополнения",
+    "withdraw": "Выводы",
+    "sort": "Сортировка:",
+    "sortDesc": "Сортировка ↓",
+    "sortAsc": "Сортировка ↑",
+    "noTransactions": "Нет транзакций"
+  },
+  "userData": {
+    "username": "пользователь1",
+    "country": "Германия"
+  },
+  "promo": {
+    "tabTitle": "Доступные бонусы",
+    "cards": [
+      {
+        "span": "150% + 0 FS",
+        "title": "Приветственный бонус - 150%",
+        "button": "Активировать"
+      },
+      {
+        "span": "50% + 0 FS",
+        "title": "Приветственный бонус - 50%",
+        "button": "Активировать"
+      }
+    ]
+  },
+  "payment": {
+    "deposit": "Депозит",
+    "withdraw": "Вывод",
+    "availableToWithdraw": "Доступно для вывода",
+    "min": "Минимум",
+    "max": "Максимум",
+    "limits": "Лимиты",
+    "commission": "Комиссия",
+    "enterWalletAddress": "Введите адрес кошелька",
+    "amount": "Сумма",
+    "toWithdraw": "К выводу",
+    "cancel": "Отмена",
+    "withdrawTo": "Вывод на",
+    "cryptoBot": "Популярно",
+    "freekassa": "Freekassa",
+    "inDevelopment": "В разработке",
+    "PayPal": "PayPal",
+    "Visa": "Visa",
+    "MasterCard": "MasterCard",
+    "Qiwi": "Qiwi",
+    "Bitcoin": "Bitcoin",
+    "withdraw": {
+      "title": "Вывод средств"
+    }
   }
 }

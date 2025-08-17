@@ -1,0 +1,83 @@
+{
+"auth": {
+  "login": "Daxil ol",
+  "register": "Qeydiyyat"
+},
+"menu": {
+    "title": "Menyu",
+    "profile": "Profil",
+    "promotions": "Aksiyalar",
+    "deposit": "Balans doldur",
+    "withdraw": "Çıxarış",
+    "settings": "Parametrlər"
+  },
+  "dashboard": {
+    "personalAccount": "Şəxsi Kabinet",
+    "username": "İstifadəçi adı:",
+    "country": "Ölkə:",
+    "phone": "Telefon:",
+    "loyaltyLevel": "Sədaqət Səviyyəsi:",
+    "accountCurrency": "Hesab Valyutası",
+    "loyaltyPoints": "Sədaqət Xalları:",
+    "realBalance": "Real Balans",
+    "bonusBalance": "Bonus Balans",
+    "fs": "FS",
+    "progressToLevel": "2-ci Səviyyəyə irəliləyiş",
+    "referralLink": "Referal Link",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı!",
+    "transactionHistory": "Əməliyyat Tarixçəsi",
+    "type": "Növ:",
+    "all": "Hamısı",
+    "deposit": "Depozitlər",
+    "withdraw": "Çıxarışlar",
+    "sort": "Sırala:",
+    "sortDesc": "Sırala ↓",
+    "sortAsc": "Sırala ↑",
+    "noTransactions": "Əməliyyat yoxdur"
+  },
+  "userData": {
+    "username": "user1",
+    "country": "Almaniya"
+  },
+  "promo": {
+    "tabTitle": "Mövcud bonuslar",
+    "cards": [
+      {
+        "span": "150% + 0 FS",
+        "title": "Xoş gəlmisiniz bonusu - 150%",
+        "button": "Aktivləşdir"
+      },
+      {
+        "span": "50% + 0 FS",
+        "title": "Xoş gəlmisiniz bonusu - 50%",
+        "button": "Aktivləşdir"
+      }
+    ]
+  },
+  "payment": {
+    "deposit": "Əmanət",
+    "withdraw": "Çıxarış",
+    "availableToWithdraw": "Çıxarmaq üçün mövcuddur",
+    "min": "Minimum",
+    "max": "Maksimum",
+    "limits": "Limitlər",
+    "commission": "Komissiya",
+    "enterWalletAddress": "Pul kisəsinin ünvanını daxil edin",
+    "amount": "Məbləğ",
+    "toWithdraw": "Çıxarılacaq məbləğ",
+    "cancel": "Ləğv et",
+    "withdrawTo": "Çıxarış",
+    "cryptoBot": "Populyar",
+    "freekassa": "Freekassa",
+    "inDevelopment": "İnkişaf mərhələsində",
+    "PayPal": "PayPal",
+    "Visa": "Visa",
+    "MasterCard": "MasterCard",
+    "Qiwi": "Qiwi",
+    "Bitcoin": "Bitcoin",
+    "withdraw": {
+      "title": "Vəsaitin çıxarılması"
+    }
+  }
+}

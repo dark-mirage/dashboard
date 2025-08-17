@@ -1,14 +1,14 @@
-import './globals.css';
-import Header from './components/Header';
+import "./globals.css";
+import Header from "./components/Header";
+import { LocaleProvider } from "./contexts/LocaleContext";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body>
-        <div className="min-h-screen">
-          <Header />
+        <LocaleProvider>
           {children}
-        </div>
+        </LocaleProvider>
       </body>
     </html>
   );

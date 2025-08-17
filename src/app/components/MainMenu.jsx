@@ -1,4 +1,3 @@
-// components/MainMenu.jsx
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -7,40 +6,44 @@ import { useLocale } from '../contexts/LocaleContext.jsx';
 export default function MainMenu() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  // const { t } = useLocale();
-  
+  const { messages = {} } = useLocale(); // Дефолтное значение {}
+
   const activeTab = searchParams.get('tab') || 'profile';
+
+  // Дефолтные значения для пунктов меню
+  const defaultMenuItems = {
+    profile: 'Профиль',
+    promotions: 'Акции',
+    deposit: 'Пополнение',
+    withdraw: 'Вывод',
+    settings: 'Настройки'
+  };
 
   const menuItems = [
     {
       key: 'profile',
       icon: '👤',
-      label: ('menu.profile'),
-      
+      label: messages?.menu?.profile || defaultMenuItems.profile
     },
     {
       key: 'promotions',
       icon: '🎁',
-      label: ('menu.promotions'),
-      
+      label: messages?.menu?.promotions || defaultMenuItems.promotions
     },
     {
       key: 'deposit',
       icon: '💳',
-      label: ('menu.deposit'),
-      
+      label: messages?.menu?.deposit || defaultMenuItems.deposit
     },
     {
       key: 'withdraw',
       icon: '💸',
-      label: ('menu.withdraw'),
-     
+      label: messages?.menu?.withdraw || defaultMenuItems.withdraw
     },
     {
       key: 'settings',
       icon: '⚙️',
-      label: ('menu.settings'),
-      
+      label: messages?.menu?.settings || defaultMenuItems.settings
     }
   ];
 
@@ -56,11 +59,11 @@ export default function MainMenu() {
   };
 
   return (
-    <div className="mx-auto bg-card p-4 h-fit">
+    <div className="menu smx-auto bg-card p-4 h-fit">
       <h3 className="text-yellow-400 font-semibold !mb-[18px] text-lg text-center">
-        {('menu.title')}
+        {messages['menu.title']}
       </h3>
-      
+
       <nav className="space-y-2 flex flex-col items-center">
         {menuItems.map((item) => (
           <button
@@ -73,7 +76,7 @@ export default function MainMenu() {
             aria-current={activeTab === item.key ? 'page' : undefined}
           >
             {item.icon}
-            <span className='text-[18px]'>{item.label}</span>
+            <span className="text-[18px]">{item.label}</span>
           </button>
         ))}
       </nav>

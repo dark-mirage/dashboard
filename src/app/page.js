@@ -36,7 +36,7 @@ export default function ProfileLayout() {
         <main className='flex gap-[20px] pt-[100px] '>
           <MainMenu />
           <div className="flex-1 p-4 bg-card"> 
-            {renderTab()}  {/* Вот это пропущено! */}
+            {renderTab()}
           </div>
         </main>
       </>
