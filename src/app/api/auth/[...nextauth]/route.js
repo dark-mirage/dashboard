@@ -40,7 +40,7 @@ const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
 */
 
-// ===== Заглушка =====
+
 import { NextResponse } from "next/server";
 
 export async function GET() {
