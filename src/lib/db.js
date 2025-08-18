@@ -12,3 +12,5 @@ function getDB() {
   `).run();
   return db;
 }
+
+export default getDB;
