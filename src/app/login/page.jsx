@@ -49,7 +49,7 @@ export default function LoginPage() {
         <div className="w-full max-w-md">
           <div className="bg-card !rounded-[30px] p-8 shadow-2xl">
             <div className="space-y-6">
-              <h1 className="text-2xl font-bold text-yellow-500 text-center !mb-[15px]">
+              <h1 className="text-2xl font-bold text-[var(--primary-yellow)] text-center !mb-[15px]">
                 {messages.login.title}
               </h1>
               <input
@@ -76,7 +76,7 @@ export default function LoginPage() {
               <button
                 onClick={handleLogin}
                 disabled={isLoading}
-                className="w-full bg-card rounded-xl py-4 text-yellow-500 font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-card rounded-xl py-4 text-[var(--primary-yellow)] font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <div className="flex items-center justify-center gap-2">
@@ -91,7 +91,7 @@ export default function LoginPage() {
               <div className="text-center">
                 <button
                   onClick={handleForgotPassword}
-                  className="text-gray-400 hover:text-yellow-500 text-sm transition-colors duration-200 underline-offset-4 hover:underline"
+                  className="text-gray-400 hover:text-[var(--primary-yellow)] text-sm transition-colors duration-200 underline-offset-4 hover:underline"
                 >
                   {messages.login.forgotPassword}
                 </button>
@@ -103,7 +103,7 @@ export default function LoginPage() {
               {messages.login.noAccount}{" "}
               <button
                 onClick={() => window.location.href = '/register'}
-                className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200 underline-offset-4 hover:underline"
+                className="text-[var(--primary-yellow)] hover:text-[var(--primary-yellow)] transition-colors duration-200 underline-offset-4 hover:underline"
               >
                 {messages.login.registerLink}
               </button>

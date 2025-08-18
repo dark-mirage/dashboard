@@ -51,7 +51,7 @@ export default function MainMenu() {
 
   return (
     <div className="menu smx-auto bg-card p-4 h-fit">
-      <h3 className="text-yellow-400 font-semibold !mb-[18px] text-lg text-center">
+      <h3 className="text-[var(--primary-yellow)] font-semibold !mb-[18px] text-lg text-center">
         {messages['menu.title']}
       </h3>
 

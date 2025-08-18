@@ -23,7 +23,7 @@ export default function SettingsForm({ fields }) {
   const restFields = fields.slice(1)
 
   return (
-    <form className="bg-card !border-none backdrop-blur-md bg-opacity-20 rounded-lg">
+    <form className="!border-none rounded-lg">
       <div className="grid grid-cols-1 gap-6">
       <div>
         <label className="block text-gray-300 text-sm mb-2">{firstField.label}</label>
@@ -78,7 +78,7 @@ export default function SettingsForm({ fields }) {
             {field.button && (
               <button
                 onClick={field.button.onClick}
-                className="px-4 py-2 bg-yellow-400 text-black rounded font-semibold hover:bg-yellow-500"
+                className="px-4 py-2 bg-[var(--primary-yellow)] text-black rounded font-semibold hover:bg-[var(--primary-yellow)]"
               >
                 {field.button.text}
               </button>

@@ -43,8 +43,8 @@ export default function SettingsTab({ userData }) {
   return (
     <div className='flex flex-col lg:flex-row gap-4 lg:gap-[30px]'>
       <div className="flex flex-col bg-card gap-3 sm:gap-5 p-2 sm:p-2.5 border border-[var(--glass-border)] rounded-[16px] sm:rounded-[20px] w-full">
-        <h2 className="text-xl sm:text-2xl font-bold text-yellow-400">{messages.settings.personalData}</h2>
-        <div className='flex flex-col gap-3 sm:gap-[20px] bg-card px-2 py-3 sm:py-4'>
+        <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-yellow)]">{messages.settings.personalData}</h2>
+        <div className='flex flex-col gap-3 sm:gap-[20px] px-2 py-3 sm:py-4'>
           <SettingsForm
             fields={[
               { 
@@ -125,15 +125,15 @@ export default function SettingsTab({ userData }) {
               }
             ]}
           />
-          <button className='button-yellow bg-card w-full px-3 sm:px-4 py-2 sm:py-[10px] text-yellow-400 text-center text-sm sm:text-base'>
+          <button className='button-yellow bg-card w-full px-3 sm:px-4 py-2 sm:py-[10px] text-[var(--primary-yellow)] text-center text-sm sm:text-base'>
             {messages.settings.saveChanges}
           </button>
           <div className="bg-card p-3 sm:p-4 rounded-xl sm:rounded-2xl w-full">
-            <span className="inline-block bg-yellow-400 text-black mb-3 sm:mb-[18px] font-semibold text-xs sm:text-sm px-2 sm:px-3 py-1 rounded">
+            <span className="inline-block bg-[var(--primary-yellow)] text-black mb-3 sm:mb-[18px] font-semibold text-xs sm:text-sm px-2 sm:px-3 py-1 rounded">
               {messages.settings.depositLimit}
             </span>
             <div className="flex flex-col xl:flex-row items-center gap-3 sm:gap-4">
-              <div className="flex flex-col gap-2 sm:gap-[10px] text-gray-300 items-center w-full sm:w-[70%] bg-[#1a1a1d] rounded-lg sm:rounded-xl">
+              <div className="flex flex-col gap-2 sm:gap-[10px] text-gray-300 items-center w-full sm:w-[70%] rounded-lg sm:rounded-xl">
                 <span className='w-full text-xs sm:text-sm'>{messages.settings.depositLimit}</span>
                 <input
                   type="number"
@@ -141,7 +141,7 @@ export default function SettingsTab({ userData }) {
                   className="flex-1 !w-full px-3 sm:px-5 py-1 sm:py-2 !pr-[15px] sm:!pr-[20px] border border-[rgba(39,39,43,255)] bg-transparent rounded-lg sm:rounded-xl outline-none text-white placeholder-gray-500 text-sm sm:text-base"
                 />
               </div>
-              <button className="flex justify-center self-center w-full min-w-[250px] xl:w-max sm:w-[40%] px-3 sm:px-5 py-1 sm:py-2 xl:self-end bg-transparent border border-[rgba(39,39,43,255)] rounded-lg sm:rounded-xl text-yellow-400 text-sm sm:text-[18px] button-yellow">
+              <button className="flex justify-center self-center w-full min-w-[250px] xl:w-max sm:w-[40%] px-3 sm:px-5 py-1 sm:py-2 xl:self-end bg-transparent border border-[rgba(39,39,43,255)] rounded-lg sm:rounded-xl text-[var(--primary-yellow)] text-sm sm:text-[18px] button-yellow">
                 {messages.settings.saveChanges}
               </button>
             </div>

@@ -31,7 +31,7 @@ export default function DashboardTab() {
 
   return (
     <div className="flex flex-col bg-card gap-3 sm:gap-5 p-2 sm:p-2.5 border border-[var(--glass-border)] rounded-[16px] sm:rounded-[20px]">
-      <h2 className="text-xl sm:text-2xl font-bold text-yellow-400">{messages.dashboard.personalAccount}</h2>
+      <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-yellow)]">{messages.dashboard.personalAccount}</h2>
 
       <div className="grid grid-cols-1 gap-4 sm:gap-6">
         <ProfileCard
@@ -106,12 +106,12 @@ export default function DashboardTab() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 sm:gap-[18px] bg-[var(--element-color)] px-2 sm:px-3 py-3 sm:py-[14px] pb-4 sm:pb-[20px] rounded-[8px] sm:rounded-[10px] items-center mb-2 sm:mb-4">
-        <h4 className="w-full text-left text-yellow-400 text-base sm:text-lg">{messages.dashboard.transactionHistory}</h4>
+      <div className="flex flex-col gap-3 sm:gap-[18px] bg-[rgba(37,37,40,0.6)] px-2 sm:px-3 py-3 sm:py-[14px] pb-4 sm:pb-[20px] rounded-[8px] sm:rounded-[10px] items-center mb-2 sm:mb-4">
+        <h4 className="w-full text-left text-[var(--primary-yellow)] text-base sm:text-lg">{messages.dashboard.transactionHistory}</h4>
         <div className="flex flex-col sm:flex-row justify-between bg-[#3b3a3e] px-2 py-2 sm:py-[10px] rounded-[8px] sm:rounded-[10px] w-full gap-2 sm:gap-0 sm:space-x-2">
           <label className='flex flex-col sm:flex-row gap-1 sm:gap-[10px] text-xs sm:text-sm'>
             <span className='flex items-center'>{messages.dashboard.type}</span>
-            <select className="py-1 sm:py-[10px] px-[0px] text-[14px] sm:text-[16px] text-center text-yellow-400 rounded-[16px] sm:rounded-[20px] w-full sm:w-[80px] bg-[rgba(38,38,43,255)] border border-gray-600 text-white">
+            <select className="py-1 sm:py-[10px] px-[0px] text-[14px] sm:text-[16px] text-center text-[var(--primary-yellow)] rounded-[16px] sm:rounded-[20px] w-full sm:w-[80px] bg-[rgba(38,38,43,255)] border border-gray-600 text-white">
               <option value="all">{messages.dashboard.all}</option>
               <option value="deposit">{messages.dashboard.deposit}</option>
               <option value="withdraw">{messages.dashboard.withdraw}</option>
@@ -119,7 +119,7 @@ export default function DashboardTab() {
           </label>
           <label className='flex flex-col sm:flex-row gap-1 sm:gap-[10px] text-xs sm:text-sm'>
             <span className='flex items-center'>{messages.dashboard.sort}</span>
-            <select className="py-1 sm:py-[10px] px-[0px] text-[14px] sm:text-[16px] text-center text-yellow-400 rounded-[16px] sm:rounded-[20px] w-full bg-[rgba(38,38,43,255)] border border-gray-600 text-white">
+            <select className="py-1 sm:py-[10px] px-[0px] text-[14px] sm:text-[16px] text-center text-[var(--primary-yellow)] rounded-[16px] sm:rounded-[20px] w-full bg-[rgba(38,38,43,255)] border border-gray-600 text-white">
               <option value="date_desc">{messages.dashboard.sortDesc}</option>
               <option value="date_asc">{messages.dashboard.sortAsc}</option>
             </select>

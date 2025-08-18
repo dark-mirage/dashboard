@@ -40,17 +40,17 @@ export default function Header() {
         <div className="flex items-center justify-between h-14 sm:h-16">
 
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-[var(--primary-yellow)] rounded-lg flex items-center justify-center">
               <span className="text-black font-bold text-sm">R</span>
             </div>
-            <span className="text-xl font-bold text-yellow-400">RNG777</span>
+            <span className="text-xl font-bold ">RNG777</span>
           </Link>
 
           <div className="flex items-center gap-4">
             <select
               onChange={(e) => changeLocale(e.target.value)}
               value={locale}
-              className="text-yellow-400 bg-transparent border border-[var(--glass-border)] rounded px-3 py-1 text-sm focus:outline-none focus:border-yellow-400"
+              className=" bg-transparent text-[var(--primary-yellow)] hover:text-white border border-[var(--glass-border)] rounded px-3 py-1 text-sm focus:outline-none focus:border-yellow-400"
             >
               {languages.map((lang) => (
                 <option key={lang.code} value={lang.code} className="bg-gray-800">
@@ -61,7 +61,7 @@ export default function Header() {
 
             {user ? (
               <div className="flex items-center gap-3">
-                <Link href="/profile" className="text-yellow-400 hover:text-yellow-300 font-medium">
+                <Link href="/profile" className=" hover:text-yellow-300 font-medium">
                   {messages.nav.profile}
                 </Link>
                 <button
@@ -75,13 +75,13 @@ export default function Header() {
               <div className="hidden md:flex items-center gap-3">
                 <Link
                   href="/login"
-                  className="text-yellow-400 bg-card hover:text-white text-sm border border-gray-600 px-3 py-1 rounded hover:border-yellow-400 transition-colors"
+                  className=" bg-card text-[var(--primary-yellow)] hover:text-white text-sm border border-gray-600 px-3 py-1 rounded hover:border-yellow-400 transition-colors"
                 >
                   {messages.auth.login}
                 </Link>
                 <Link
                   href="/register"
-                  className="bg-card text-yellow-400 px-4 py-1 rounded font-medium hover:bg-yellow-300 transition-colors text-sm"
+                  className="bg-card text-[var(--primary-yellow)] hover:text-white px-4 py-1 rounded font-medium hover:bg-yellow-300 transition-colors text-sm"
                 >
                   {messages.auth.register}
                 </Link>
@@ -89,7 +89,7 @@ export default function Header() {
             )}
 
             <button
-              className="md:hidden text-yellow-400"
+              className="md:hidden "
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <svg
@@ -140,7 +140,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/register"
-                  className="bg-yellow-400 text-black text-center px-3 py-1 rounded font-medium hover:bg-yellow-300"
+                  className="bg-[var(--primary-yellow)] text-black text-center px-3 py-1 rounded font-medium hover:bg-yellow-300"
                 >
                   {messages.auth.register}
                 </Link>

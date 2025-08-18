@@ -14,12 +14,12 @@ export default function PromotionsCard({ img, span, title, button }) {
             className="w-full max-h-[200px] object-cover"
           />
 
-          <div className="absolute top-2 right-1 bg-yellow-400 text-black font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">
+          <div className="absolute top-2 right-1 bg-[var(--primary-yellow)] text-black font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">
             {span}
           </div>
 
           <div className="absolute bottom-2 left-0 right-0 bg-opacity-50 text-white p-1 sm:p-2 text-center text-[14px] sm:text-[18px]">
-            <h3 className="font-bold text-[10px] sm:text-[12px] text-yellow-400">{title}</h3>
+            <h3 className="font-bold text-[10px] sm:text-[12px] text-[var(--primary-yellow)]">{title}</h3>
           </div>
         </div>
       </div>

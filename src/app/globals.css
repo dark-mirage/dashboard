@@ -53,7 +53,7 @@ body::after {
 
 :root {
   --primary-yellow: #ffd600;
-  --card-bg: #1a1a1d;
+  --card-bg: rgba(26, 26, 29, 0.6);
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.2);
 }
@@ -106,13 +106,13 @@ html, body {
 
 .button-yellow {
   background: var(--card-bg);; 
-  color: rgb(234, 179, 8); 
+  color: var(--primary-yellow); 
   transition: background-color 0.3s ease-in, color 0.3s ease-in;
 }
 
 
 .button-yellow:hover {
-  background-color: rgb(234, 179, 8);
+  background-color: var(--primary-yellow);
   color: white;
 }
 
@@ -176,7 +176,7 @@ html, body {
 
 
 .btn-primary {
-  @apply bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg 
+  @apply bg-[var(--primary-yellow)] text-black font-semibold px-6 py-3 rounded-lg 
          hover:bg-yellow-300 transition-colors 
          focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-gray-800;
 }
@@ -189,7 +189,7 @@ html, body {
 
 
 .menu-item.active {
-  @apply bg-yellow-400 text-black;
+  @apply bg-[var(--primary-yellow)]  text-black;
 }
 
 .menu-item:not(.active) {

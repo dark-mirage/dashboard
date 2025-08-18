@@ -38,7 +38,7 @@ export default function RegisterForm() {
       <div className="w-full flex justify-center items-center p-4 min-h-screen">
         <div className="w-full max-w-md">
           <div className="bg-card rounded-2xl md:rounded-[30px] flex flex-col gap-2.5 backdrop-blur-sm border border-gray-700/50 p-6 md:p-8 shadow-2xl">
-            <h2 className="text-xl md:text-2xl font-bold text-yellow-500 text-center mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-[var(--primary-yellow)] text-center mb-6 md:mb-8">
               {messages.register.title}
             </h2>
             
@@ -75,7 +75,7 @@ export default function RegisterForm() {
                 <select 
                   value={country} 
                   onChange={e => setCountry(e.target.value)}
-                  className="w-full bg-card text-yellow-400 rounded px-4 py-2 md:py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none text-sm md:text-base"
+                  className="w-full bg-card text-yellow-300 rounded px-4 py-2 md:py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none text-sm md:text-base"
                 >
                   <option value="" className="text-gray-400">{messages.register.countries['']}</option>
                   {Object.entries(messages.register.countries).map(([code, name]) => (
@@ -84,24 +84,22 @@ export default function RegisterForm() {
                 </select>
               </div>
               
-              <div>
-                <select 
-                  value={currency} 
-                  onChange={e => setCurrency(e.target.value)}
-                  className="w-full bg-card text-yellow-400 rounded px-4 py-2 md:py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none text-sm md:text-base"
-                >
-                  <option value="" className="text-gray-400">{messages.register.currencies['']}</option>
-                  {Object.entries(messages.register.currencies).map(([code, name]) => (
-                    code && <option key={code} value={code}>{name}</option>
-                  ))}
-                </select>
-              </div>
-              
+              <select
+                value={currency}
+                onChange={e => setCurrency(e.target.value)}
+                className="w-full bg-card text-yellow-300 rounded px-4 py-2 md:py-3 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none text-sm md:text-base"
+              >
+                {Object.entries(messages.register.currencies).map(([code, name]) => (
+                  <option key={code} value={code} className="bg-card text-yellow-300">
+                    {name}
+                  </option>
+                ))}
+              </select>
               <div className="flex gap-2">
                 <select 
                   value={phoneCode} 
                   onChange={e => setPhoneCode(e.target.value)}
-                  className="w-20 md:w-24 bg-card text-yellow-400 rounded px-2 md:px-3 py-2 md:py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none text-sm md:text-base text-center"
+                  className="w-20 md:w-24 bg-card text-yellow-300 rounded px-2 md:px-3 py-2 md:py-3 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors appearance-none text-sm md:text-base text-center"
                 >
                   {Object.entries(messages.register.phoneCodes).map(([code, display]) => (
                     <option key={code} value={code}>{display}</option>
@@ -111,13 +109,13 @@ export default function RegisterForm() {
                   placeholder={messages.register.phoneNumber}
                   value={phoneNumber} 
                   onChange={e => setPhoneNumber(e.target.value)}
-                  className="flex-1 bg-card text-yellow-400 rounded px-4 py-2 md:py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors text-sm md:text-base"
+                  className="flex-1 bg-card text-yellow-300 rounded px-4 py-2 md:py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors text-sm md:text-base"
                 />
               </div>
               
               <button 
                 onClick={handleRegister}
-                className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 md:py-3 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-800 text-sm md:text-base"
+                className="w-full bg-card text-yellow-300 hover:bg-yellow-600 text-black font-medium py-2 md:py-3 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-800 text-sm md:text-base"
               >
                 {messages.register.submit}
               </button>
