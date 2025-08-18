@@ -1,3 +1,4 @@
+/*
 import { registerUser } from "../auth/[...nextauth]/route";
 
 export async function POST(req) {
@@ -15,4 +16,10 @@ export async function POST(req) {
     console.error(err);
     return new Response(JSON.stringify({ success: false, message: "Ошибка сервера" }), { status: 500 });
   }
+}
+*/
+
+// Заглушка 
+export async function POST() {
+  return new Response(JSON.stringify({ message: "Register API заглушка" }), { status: 200 });
 }

@@ -1,3 +1,4 @@
+/* 
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
@@ -37,3 +38,15 @@ export const authOptions = {
 
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
+*/
+
+// ===== Заглушка =====
+import { NextResponse } from "next/server";
+
+export async function GET() {
+  return NextResponse.json({ message: "Auth API заглушка (GET)" });
+}
+
+export async function POST() {
+  return NextResponse.json({ message: "Auth API заглушка (POST)" });
+}
