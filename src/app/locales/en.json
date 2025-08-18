@@ -1,8 +1,11 @@
 {
-  "auth": {
-    "login": "Log in",
-    "register": "Registration"
-  },
+"auth": {
+  "login": "Log in",
+  "register": "Register",
+  "email": "Email",
+  "password": "Password",
+  "2fa_code": "2FA Code"
+},
   "menu": {
     "title": "Menu",
     "profile": "Profile",
@@ -16,11 +19,6 @@
     "register": "Sign Up",
     "profile": "Profile",
     "logout": "Logout"
-  },
-  "auth": {
-    "email": "Email",
-    "password": "Password",
-    "2fa_code": "2FA Code"
   },
   "dashboard": {
       "personalAccount": "Personal Account",
@@ -90,6 +88,182 @@
     "withdraw": {
       "title": "Withdraw funds"
     }
+  },
+   "settings": {
+    "personalData": "Personal data",
+    "form": {
+      "email": "Email",
+      "sendCode": "Send code",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "gender": "Gender",
+      "notSpecified": "Not specified",
+      "male": "Male",
+      "female": "Female",
+      "country": "Country",
+      "city": "City",
+      "address": "Address",
+      "postalCode": "Postal code",
+      "phone": "Phone",
+      "saveChanges": "Save changes",
+      "depositLimit": "Deposit limit (EUR)",
+      "depositLimitAmount": "Deposit limit"
+    },
+    "subscriptions": {
+      "title": "Subscriptions",
+      "emailNotifications": "Email notifications",
+      "newsPromotions": "Receive news and promotions"
+    },
+    "security": {
+      "title": "Security",
+      "changePassword": "Change your password",
+      "kycVerification": "KYC verification",
+      "uploadDocuments": "Upload documents for identity verification",
+      "start": "Start",
+      "twoFactorAuth": "Two-factor authentication",
+      "accountProtection": "Account and transaction protection"
+    },
+    "blocking": {
+      "title": "Blocking",
+      "blockAccount": "Block account",
+      "blockDescription": "Block account and prohibit deposits"
+    }
+  },
+  "settings": {
+    "personalData": "Personal Data",
+    "email": "Email",
+    "sendCode": "Send Code",
+    "sendCodeToEmail": "Sending code to email",
+    "firstName": "First Name",
+    "enterFirstName": "Enter your first name",
+    "lastName": "Last Name",
+    "enterLastName": "Enter your last name",
+    "gender": "Gender",
+    "notSpecified": "Not specified",
+    "male": "Male",
+    "female": "Female",
+    "country": "Country",
+    "city": "City",
+    "address": "Address",
+    "postalCode": "Postal Code",
+    "phone": "Phone",
+    "saveChanges": "Save Changes",
+    "depositLimit": "Deposit Limit (EUR)",
+    "subscriptions": "Subscriptions",
+    "emailNotifications": "Email notifications",
+    "receiveNews": "Receive news and promotions",
+    "security": "Security",
+    "changePassword": "Change your password",
+    "changePasswordDesc": "Change your password",
+    "change": "Change",
+    "kycVerification": "KYC Verification",
+    "uploadDocuments": "Upload documents for identity verification",
+    "start": "Start",
+    "twoFactorAuth": "Two-factor authentication",
+    "accountProtection": "Account and transactions protection",
+    "blocking": "Blocking",
+    "blockAccount": "Block account",
+    "blockAccountDesc": "Block account and prohibit deposits",
+    "countries": {
+      "germany": "Germany",
+      "france": "France",
+      "spain": "Spain",
+      "italy": "Italy",
+      "netherlands": "Netherlands",
+      "belgium": "Belgium",
+      "austria": "Austria",
+      "switzerland": "Switzerland",
+      "sweden": "Sweden",
+      "denmark": "Denmark"
+    }
+  },
+  "register": {
+    "title": "Registration",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "country": "Country",
+    "currency": "Currency",
+    "phoneNumber": "Phone number",
+    "submit": "Register",
+    "countries": {
+      "": "Select country",
+      "de": "Germany",
+      "fr": "France",
+      "it": "Italy",
+      "es": "Spain",
+      "gb": "United Kingdom",
+      "nl": "Netherlands",
+      "be": "Belgium",
+      "ch": "Switzerland",
+      "at": "Austria",
+      "pt": "Portugal",
+      "se": "Sweden",
+      "no": "Norway",
+      "fi": "Finland",
+      "dk": "Denmark",
+      "pl": "Poland",
+      "cz": "Czech Republic",
+      "hu": "Hungary",
+      "ro": "Romania",
+      "gr": "Greece"
+    },
+    "currencies": {
+      "": "Select currency",
+      "eur": "EUR",
+      "gbp": "GBP",
+      "chf": "CHF",
+      "sek": "SEK",
+      "nok": "NOK",
+      "dkk": "DKK",
+      "pln": "PLN",
+      "czk": "CZK",
+      "huf": "HUF",
+      "ron": "RON"
+    },
+    "phoneCodes": {
+      "": "Code",
+      "+49": "+49 Germany",
+      "+33": "+33 France",
+      "+39": "+39 Italy",
+      "+34": "+34 Spain",
+      "+44": "+44 UK",
+      "+31": "+31 Netherlands",
+      "+32": "+32 Belgium",
+      "+41": "+41 Switzerland",
+      "+43": "+43 Austria",
+      "+351": "+351 Portugal",
+      "+46": "+46 Sweden",
+      "+47": "+47 Norway",
+      "+358": "+358 Finland",
+      "+45": "+45 Denmark",
+      "+48": "+48 Poland",
+      "+420": "+420 Czech Republic",
+      "+36": "+36 Hungary",
+      "+40": "+40 Romania",
+      "+30": "+30 Greece"
+    },
+    "networkError": "Network error",
+    "success": "Registration successful!",
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email",
+      "passwordLength": "Password must be at least 8 characters",
+      "phone": "Please enter a valid phone number"
+    }
+  },
+  "login": {
+    "title": "Login",
+    "emailPlaceholder": "Username or Email",
+    "passwordPlaceholder": "Password",
+    "loginButton": "Log In",
+    "loggingIn": "Logging in...",
+    "forgotPassword": "Forgot password?",
+    "forgotPasswordAlert": "Password recovery function",
+    "noAccount": "Don't have an account?",
+    "registerLink": "Register",
+    "invalidCredentials": "Invalid credentials",
+    "networkError": "Network error"
   }
 }
 

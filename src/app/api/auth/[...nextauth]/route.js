@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
-let users = []; // память для пользователей
+let users = [];
 
 export async function registerUser(name, email, password) {
   const exists = users.some(u => u.email === email);

@@ -12,7 +12,6 @@ export const LocaleProvider = ({ children, defaultLocale = "ru" }) => {
   const [messages, setMessages] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  // Initialize locale from localStorage or default
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedLocale = localStorage.getItem("locale");
@@ -20,7 +19,6 @@ export const LocaleProvider = ({ children, defaultLocale = "ru" }) => {
     }
   }, [defaultLocale]);
 
-  // Load messages when locale changes
   useEffect(() => {
     if (!locale) return;
 

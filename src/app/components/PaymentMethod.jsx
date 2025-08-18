@@ -26,7 +26,6 @@ const PaymentMethodTab = ({
     <div className="flex flex-col bg-card gap-3 sm:gap-5 p-2 sm:p-2.5 border border-[var(--glass-border)] rounded-[16px] sm:rounded-[20px]">
       <h2 className="text-xl sm:text-2xl font-bold text-yellow-400">{messages[title] || title}</h2>
       
-      {/* Баланс (только для вывода) */}
       {showBalance && (
         <div className="bg-[rgba(37,37,40,255)] backdrop-blur-md bg-opacity-20 p-4 sm:p-6 rounded-lg">
           <h3 className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2">{messages.payment.availableToWithdraw}</h3>
@@ -34,7 +33,6 @@ const PaymentMethodTab = ({
         </div>
       )}
 
-      {/* Методы */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
         {methods.map((method) => (
           <div
@@ -71,7 +69,6 @@ const PaymentMethodTab = ({
         ))}
       </div>
 
-      {/* Форма */}
       {selectedMethod && (
         <div className="bg-[rgba(37,37,40,255)] backdrop-blur-md bg-opacity-20 p-4 sm:p-6 rounded-lg">
           <div className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
@@ -97,7 +94,6 @@ const PaymentMethodTab = ({
           </div>
 
           <div className="space-y-3 sm:space-y-4">
-            {/* Поле для адреса кошелька (только для вывода) */}
             {showWalletInput && (
               <input
                 type="text"
@@ -131,7 +127,6 @@ const PaymentMethodTab = ({
               </div>
             )}
 
-            {/* Кнопки */}
             <button className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[rgba(29,29,34,255)] border border-[rgba(58,56,53,255)] rounded-[14px] sm:rounded-[18px] button-yellow text-sm sm:text-base">
               {type === 'deposit' ? messages.payment.deposit : messages.payment.withdraw}
             </button>

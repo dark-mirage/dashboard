@@ -6,45 +6,36 @@ import { useLocale } from '../contexts/LocaleContext.jsx';
 export default function MainMenu() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { messages = {} } = useLocale(); // Дефолтное значение {}
+  const { messages } = useLocale();
 
   const activeTab = searchParams.get('tab') || 'profile';
 
-  // Дефолтные значения для пунктов меню
-  const defaultMenuItems = {
-    profile: 'Профиль',
-    promotions: 'Акции',
-    deposit: 'Пополнение',
-    withdraw: 'Вывод',
-    settings: 'Настройки'
-  };
-
   const menuItems = [
     {
-      key: 'profile',
-      icon: '👤',
-      label: messages?.menu?.profile || defaultMenuItems.profile
-    },
-    {
-      key: 'promotions',
-      icon: '🎁',
-      label: messages?.menu?.promotions || defaultMenuItems.promotions
-    },
-    {
-      key: 'deposit',
-      icon: '💳',
-      label: messages?.menu?.deposit || defaultMenuItems.deposit
-    },
-    {
-      key: 'withdraw',
-      icon: '💸',
-      label: messages?.menu?.withdraw || defaultMenuItems.withdraw
-    },
-    {
-      key: 'settings',
-      icon: '⚙️',
-      label: messages?.menu?.settings || defaultMenuItems.settings
-    }
+    key: 'profile',
+    icon: '👤',
+    label: messages.menu.profile,
+  },
+  {
+    key: 'promotions',
+    icon: '🎁',
+    label: messages.menu.promotions,
+  },
+  {
+    key: 'deposit',
+    icon: '💳',
+    label: messages.menu.deposit,
+  },
+  {
+    key: 'withdraw',
+    icon: '💸',
+    label: messages.menu.withdraw,
+  },
+  {
+    key: 'settings',
+    icon: '⚙️',
+    label: messages.menu.settings,
+  }
   ];
 
   const handleTabChange = (tabKey) => {

@@ -48,47 +48,45 @@ export default function SettingsForm({ fields }) {
         </div>
       </div>
 
-
-        {/* Остальные элементы в две колонки */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {restFields.map(field => (
-            <div key={field.name}>
-              <label className="block text-gray-300 text-sm mb-2">{field.label}</label>
-              {field.type === 'select' ? (
-                <select
-                  name={field.name}
-                  value={formData[field.name]}
-                  onChange={handleInputChange}
-                  className="w-full px-3 py-2 bg-card rounded text-white"
-                >
-                  {field.options?.map(option => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <input
-                  type={field.type || 'text'}
-                  name={field.name}
-                  value={formData[field.name]}
-                  onChange={handleInputChange}
-                  placeholder={field.placeholder || ''}
-                  className="w-full px-3 py-2 bg-card rounded text-white placeholder-gray-400 input-glass"
-                />
-              )}
-              {field.button && (
-                <button
-                  onClick={field.button.onClick}
-                  className="px-4 py-2 bg-yellow-400 text-black rounded font-semibold hover:bg-yellow-500"
-                >
-                  {field.button.text}
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {restFields.map(field => (
+          <div key={field.name}>
+            <label className="block text-gray-300 text-sm mb-2">{field.label}</label>
+            {field.type === 'select' ? (
+              <select
+                name={field.name}
+                value={formData[field.name]}
+                onChange={handleInputChange}
+                className="w-full px-3 py-2 bg-card rounded text-white"
+              >
+                {field.options?.map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <input
+                type={field.type || 'text'}
+                name={field.name}
+                value={formData[field.name]}
+                onChange={handleInputChange}
+                placeholder={field.placeholder || ''}
+                className="w-full px-3 py-2 bg-card rounded text-white placeholder-gray-400 input-glass"
+              />
+            )}
+            {field.button && (
+              <button
+                onClick={field.button.onClick}
+                className="px-4 py-2 bg-yellow-400 text-black rounded font-semibold hover:bg-yellow-500"
+              >
+                {field.button.text}
+              </button>
+            )}
+          </div>
+        ))}
       </div>
-    </form>
+    </div>
+  </form>
   )
 }

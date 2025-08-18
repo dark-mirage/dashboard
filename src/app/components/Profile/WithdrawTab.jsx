@@ -27,9 +27,8 @@ const withdrawMethods = [
 ];
 
 export default function WithdrawTab() {
-  const { messages = {} } = useLocale(); // Добавляем дефолтное значение
+  const { messages = {} } = useLocale();
   
-  // Задаем дефолтные значения для текстов
   const defaultTitle = "Вывод средств";
   
   return (

@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -16,7 +11,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --element-color: #262626
+    --element-color: rgba(37,37,40,255);
   }
 }
 
@@ -29,7 +24,7 @@ body {
 
 body::before {
     content: '';
-    position: fixed; /* Изменено с absolute на fixed */
+    position: fixed; 
     bottom: -200px;
     right: -200px;
     width: 600px;
@@ -43,7 +38,7 @@ body::before {
 
 body::after {
     content: '';
-    position: fixed; /* Изменено с absolute на fixed */
+    position: fixed; 
     top: -200px;
     left: -300px;
     width: 800px;
@@ -63,7 +58,7 @@ body::after {
   --glass-border: rgba(255, 255, 255, 0.2);
 }
 
-/* ==== Base Reset ==== */
+/* Base Reset*/
 * {
   box-sizing: border-box;
 }
@@ -81,7 +76,7 @@ html, body {
 }
 
 
-/* ==== Utility Styles ==== */
+
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
@@ -115,7 +110,7 @@ html, body {
   transition: background-color 0.3s ease-in, color 0.3s ease-in;
 }
 
-/* Наведение */
+
 .button-yellow:hover {
   background-color: rgb(234, 179, 8);
   color: white;
@@ -168,7 +163,7 @@ html, body {
 }
 
 
-/* ==== Forms ==== */
+
 .form-input {
   @apply w-full bg-transparent border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 
          focus:border-yellow-400 focus:outline-none focus:ring-1 focus:ring-yellow-400 transition-colors;
@@ -179,7 +174,7 @@ html, body {
          focus:border-yellow-400 focus:outline-none focus:ring-1 focus:ring-yellow-400 transition-colors;
 }
 
-/* ==== Buttons ==== */
+
 .btn-primary {
   @apply bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg 
          hover:bg-yellow-300 transition-colors 
@@ -192,8 +187,6 @@ html, body {
          focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800;
 }
 
-/* ==== Menu ==== */
-
 
 .menu-item.active {
   @apply bg-yellow-400 text-black;
@@ -203,7 +196,6 @@ html, body {
   @apply text-gray-300 hover:bg-gray-700 hover:text-white;
 }
 
-/* ==== Tabs ==== */
 .tab-content {
   @apply min-h-[600px] p-6;
 }

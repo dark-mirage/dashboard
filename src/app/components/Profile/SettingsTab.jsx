@@ -1,20 +1,22 @@
 'use client'
 
 import { useState } from 'react'
+import { useLocale } from '../../contexts/LocaleContext'
 import SettingsCard from '../SettingsCard'
 import SettingsForm from '../PersonalInfoForm'
 
 export default function SettingsTab({ userData }) {
+  const { messages } = useLocale()
   const [formData, setFormData] = useState({
     email: userData?.email || 'gondgridontdam@gmail.com',
     firstName: userData?.firstName || '',
     lastName: userData?.lastName || '',
     phone: userData?.phone || '9189914566',
-    country: userData?.country || 'Германия',
-    city: userData?.city || 'Город',
-    address: userData?.address || 'Адрес',
-    postalCode: userData?.postalCode || 'Почтовый индекс',
-    gender: userData?.gender || 'пол',
+    country: userData?.country || messages.settings.germany,
+    city: userData?.city || messages.settings.city,
+    address: userData?.address || messages.settings.address,
+    postalCode: userData?.postalCode || messages.settings.postalCode,
+    gender: userData?.gender || messages.settings.gender,
   })
 
   const [notifications, setNotifications] = useState({
@@ -41,68 +43,98 @@ export default function SettingsTab({ userData }) {
   return (
     <div className='flex flex-col lg:flex-row gap-4 lg:gap-[30px]'>
       <div className="flex flex-col bg-card gap-3 sm:gap-5 p-2 sm:p-2.5 border border-[var(--glass-border)] rounded-[16px] sm:rounded-[20px] w-full">
-        <h2 className="text-xl sm:text-2xl font-bold text-yellow-400">Личные данные</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-yellow-400">{messages.settings.personalData}</h2>
         <div className='flex flex-col gap-3 sm:gap-[20px] bg-card px-2 py-3 sm:py-4'>
           <SettingsForm
             fields={[
               { 
                 name: 'email', 
-                label: 'Электронная почта', 
+                label: messages.settings.email, 
                 value: userData?.email || 'jklfsfjlka@gmail.com', 
                 readOnly: true,
                 button: {
-                  text: 'Отправить код',
+                  text: messages.settings.sendCode,
                   onClick: () => {
-                    console.log('Отправка кода на email');
+                    console.log(messages.settings.sendCodeToEmail);
                   }
                 }
               },
-              { name: 'firstName', label: 'Имя', value: userData?.firstName || '', placeholder: 'Введите ваше имя' },
-              { name: 'lastName', label: 'Фамилия', value: userData?.lastName || '', placeholder: 'Введите вашу фамилию' },
+              { 
+                name: 'firstName', 
+                label: messages.settings.firstName, 
+                value: userData?.firstName || '', 
+                placeholder: messages.settings.enterFirstName 
+              },
+              { 
+                name: 'lastName', 
+                label: messages.settings.lastName, 
+                value: userData?.lastName || '', 
+                placeholder: messages.settings.enterLastName 
+              },
               { 
                 name: 'gender', 
-                label: 'Пол', 
+                label: messages.settings.gender, 
                 type: 'select', 
-                value: userData?.gender || 'Не указано', 
+                value: userData?.gender || messages.settings.notSpecified, 
                 options: [
-                  { value: 'male', label: 'Мужской' },
-                  { value: 'female', label: 'Женский' },
+                  { value: 'male', label: messages.settings.male },
+                  { value: 'female', label: messages.settings.female },
                 ]
               },
               { 
                 name: 'country', 
-                label: 'Страна', 
+                label: messages.settings.country, 
                 type: 'select', 
-                value: userData?.country || 'Германия', 
+                value: userData?.country || messages.settings.germany, 
                 options: [
-                  { value: 'germany', label: 'Германия' },
-                  { value: 'france', label: 'Франция' },
-                  { value: 'spain', label: 'Испания' },
-                  { value: 'italy', label: 'Италия' },
-                  { value: 'netherlands', label: 'Нидерланды' },
-                  { value: 'belgium', label: 'Бельгия' },
-                  { value: 'austria', label: 'Австрия' },
-                  { value: 'switzerland', label: 'Швейцария' },
-                  { value: 'sweden', label: 'Швеция' },
-                  { value: 'denmark', label: 'Дания' },
+                  { value: 'germany', label: messages.settings.germany },
+                  { value: 'france', label: messages.settings.france },
+                  { value: 'spain', label: messages.settings.spain },
+                  { value: 'italy', label: messages.settings.italy },
+                  { value: 'netherlands', label: messages.settings.netherlands },
+                  { value: 'belgium', label: messages.settings.belgium },
+                  { value: 'austria', label: messages.settings.austria },
+                  { value: 'switzerland', label: messages.settings.switzerland },
+                  { value: 'sweden', label: messages.settings.sweden },
+                  { value: 'denmark', label: messages.settings.denmark },
                 ]
               },
-              { name: 'city', label: 'Город', value: userData?.city || '', placeholder: 'Город' },
-              { name: 'address', label: 'Адрес', value: userData?.address || '', placeholder: 'Адрес' },
-              { name: 'postalCode', label: 'Почтовый индекс', value: userData?.postalCode || '', placeholder: 'Почтовый индекс' },
-              { label: 'Телефон', name: 'phone', type: 'text', value: (userData?.phone ?? '94323484').toString() }
+              { 
+                name: 'city', 
+                label: messages.settings.city, 
+                value: userData?.city || '', 
+                placeholder: messages.settings.city 
+              },
+              { 
+                name: 'address', 
+                label: messages.settings.address, 
+                value: userData?.address || '', 
+                placeholder: messages.settings.address 
+              },
+              { 
+                name: 'postalCode', 
+                label: messages.settings.postalCode, 
+                value: userData?.postalCode || '', 
+                placeholder: messages.settings.postalCode 
+              },
+              { 
+                label: messages.settings.phone, 
+                name: 'phone', 
+                type: 'text', 
+                value: (userData?.phone ?? '94323484').toString() 
+              }
             ]}
           />
           <button className='button-yellow bg-card w-full px-3 sm:px-4 py-2 sm:py-[10px] text-yellow-400 text-center text-sm sm:text-base'>
-            Сохранить изменения
+            {messages.settings.saveChanges}
           </button>
           <div className="bg-card p-3 sm:p-4 rounded-xl sm:rounded-2xl w-full">
             <span className="inline-block bg-yellow-400 text-black mb-3 sm:mb-[18px] font-semibold text-xs sm:text-sm px-2 sm:px-3 py-1 rounded">
-              Лимит на депозит (EUR)
+              {messages.settings.depositLimit}
             </span>
             <div className="flex flex-col xl:flex-row items-center gap-3 sm:gap-4">
               <div className="flex flex-col gap-2 sm:gap-[10px] text-gray-300 items-center w-full sm:w-[70%] bg-[#1a1a1d] rounded-lg sm:rounded-xl">
-                <span className='w-full text-xs sm:text-sm'>Лимит на депозит</span>
+                <span className='w-full text-xs sm:text-sm'>{messages.settings.depositLimit}</span>
                 <input
                   type="number"
                   placeholder="(EUR)"
@@ -110,7 +142,7 @@ export default function SettingsTab({ userData }) {
                 />
               </div>
               <button className="flex justify-center self-center w-full min-w-[250px] xl:w-max sm:w-[40%] px-3 sm:px-5 py-1 sm:py-2 xl:self-end bg-transparent border border-[rgba(39,39,43,255)] rounded-lg sm:rounded-xl text-yellow-400 text-sm sm:text-[18px] button-yellow">
-                Сохранить изменения
+                {messages.settings.saveChanges}
               </button>
             </div>
           </div>
@@ -118,36 +150,36 @@ export default function SettingsTab({ userData }) {
       </div>
       <div className="flex flex-col gap-3 sm:gap-[20px]">
         <SettingsCard
-          badge="Подписки"
+          badge={messages.settings.subscriptions}
           title=""
           items={[
             {
-              label: "Уведомления на email",
-              description: "Получать новости и акции",
+              label: messages.settings.emailNotifications,
+              description: messages.settings.receiveNews,
               type: "switch",
               enabled: false,
             },
           ]}
         />
         <SettingsCard
-          badge="Безопасность"
+          badge={messages.settings.security}
           title=""
           items={[
             {
-              label: "Измените ваш пароль",
-              description: "Измените ваш пароль",
+              label: messages.settings.changePassword,
+              description: messages.settings.changePasswordDesc,
               type: "button",
-              buttonText: "Изменить",
+              buttonText: messages.settings.change,
             },
             {
-              label: "KYC верификация",
-              description: "Загрузите документы для подтверждения личности",
+              label: messages.settings.kycVerification,
+              description: messages.settings.uploadDocuments,
               type: "button",
-              buttonText: "Начать",
+              buttonText: messages.settings.start,
             },
             {
-              label: "Двухфакторная аутентификация",
-              description: "Защита аккаунта и транзакций",
+              label: messages.settings.twoFactorAuth,
+              description: messages.settings.accountProtection,
               type: "switch",
               enabled: false,
               className: "border-none",
@@ -155,12 +187,12 @@ export default function SettingsTab({ userData }) {
           ]}
         />
         <SettingsCard
-          badge="Блокировка"
+          badge={messages.settings.blocking}
           title=""
           items={[
             {
-              label: "Заблокировать аккаунт",
-              description: "Заблокировать аккаунт и запретить депозиты",
+              label: messages.settings.blockAccount,
+              description: messages.settings.blockAccountDesc,
               type: "switch",
               enabled: false,
               className: "border-none",

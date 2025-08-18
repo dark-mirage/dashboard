@@ -9,7 +9,7 @@ export default function Header() {
   const { locale, changeLocale, messages } = useLocale();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const user = null; // пока нет пользователя
+  const user = null;
 
   const tabs = [
     { key: 'profile', label: '👤 Profile' },
@@ -35,7 +35,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass bg-card">
+    <header className="fixed top-0 left-0 right-0 z-50 glass mt-[8px] !bg-[#1a1a1d]/50">
       <div className="container mx-auto px-2 sm:px-4">
         <div className="flex items-center justify-between h-14 sm:h-16">
 
@@ -59,7 +59,6 @@ export default function Header() {
               ))}
             </select>
 
-            {/* Авторизация */}
             {user ? (
               <div className="flex items-center gap-3">
                 <Link href="/profile" className="text-yellow-400 hover:text-yellow-300 font-medium">
@@ -78,18 +77,17 @@ export default function Header() {
                   href="/login"
                   className="text-yellow-400 bg-card hover:text-white text-sm border border-gray-600 px-3 py-1 rounded hover:border-yellow-400 transition-colors"
                 >
-                   {messages?.auth?.login || "Login"}
+                  {messages.auth.login}
                 </Link>
                 <Link
                   href="/register"
                   className="bg-card text-yellow-400 px-4 py-1 rounded font-medium hover:bg-yellow-300 transition-colors text-sm"
                 >
-                   {messages?.auth?.register || "Register"}
+                  {messages.auth.register}
                 </Link>
               </div>
             )}
 
-            {/* Кнопка для мобильного меню */}
             <button
               className="md:hidden text-yellow-400"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -117,7 +115,7 @@ export default function Header() {
         </div>
 
         <div
-          className={`md:hidden mt-2 bg-card rounded-lg shadow-lg transition-all duration-300 ${
+          className={`md:hidden mt-2 bg-card rounded-lg shadow-lg !bg-[#1a1a1d]/50 transition-all duration-300 ${
             isMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
           }`}
         >
@@ -138,13 +136,13 @@ export default function Header() {
                   href="/login"
                   className="text-gray-300 hover:text-white text-center border border-gray-600 px-2 py-1 rounded hover:border-yellow-400"
                 >
-                    {messages?.auth?.login || "Login"}
+                  {messages.auth.login}
                 </Link>
                 <Link
                   href="/register"
                   className="bg-yellow-400 text-black text-center px-3 py-1 rounded font-medium hover:bg-yellow-300"
                 >
-                   {messages?.auth?.register || "Register"}
+                  {messages.auth.register}
                 </Link>
               </div>
             )}
