@@ -82,46 +82,6 @@
   },
   "settings": {
     "personalData": "Şəxsi məlumatlar",
-    "form": {
-      "email": "E-poçt",
-      "sendCode": "Kodu göndər",
-      "firstName": "Ad",
-      "lastName": "Soyad",
-      "gender": "Cins",
-      "notSpecified": "Göstərilməyib",
-      "male": "Kişi",
-      "female": "Qadın",
-      "country": "Ölkə",
-      "city": "Şəhər",
-      "address": "Ünvan",
-      "postalCode": "Poçt indeksi",
-      "phone": "Telefon",
-      "saveChanges": "Dəyişiklikləri yadda saxla",
-      "depositLimit": "Depozit limiti (EUR)",
-      "depositLimitAmount": "Depozit limiti"
-    },
-    "subscriptions": {
-      "title": "Abunəliklər",
-      "emailNotifications": "E-poçt bildirişləri",
-      "newsPromotions": "Xəbərlər və promosyonlar alın"
-    },
-    "security": {
-      "title": "Təhlükəsizlik",
-      "changePassword": "Şifrənizi dəyişdirin",
-      "kycVerification": "KYC təsdiqi",
-      "uploadDocuments": "Şəxsiyyətinizi təsdiq etmək üçün sənədlər yükləyin",
-      "start": "Başla",
-      "twoFactorAuth": "İki faktorlu autentifikasiya",
-      "accountProtection": "Hesab və əməliyyat qorunması"
-    },
-    "blocking": {
-      "title": "Bloklama",
-      "blockAccount": "Hesabı blokla",
-      "blockDescription": "Hesabı blokla və depozitləri qadağan et"
-    }
-  },
-  "settings": {
-    "personalData": "Şəxsi məlumatlar",
     "email": "Elektron poçt",
     "sendCode": "Kodu göndər",
     "sendCodeToEmail": "Kodu emailə göndərmək",
