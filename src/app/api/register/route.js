@@ -19,7 +19,7 @@ export async function POST(req) {
 }
 */
 
-// Заглушка 
+
 export async function POST() {
   return new Response(JSON.stringify({ message: "Register API заглушка" }), { status: 200 });
 }
