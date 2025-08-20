@@ -15,7 +15,7 @@ const initialState = {
   address: "",
   postalCode: "",
   gender: "",
-  firstName: "", 
+  firstName: "user1", 
   lastName: ""   
 };
 
