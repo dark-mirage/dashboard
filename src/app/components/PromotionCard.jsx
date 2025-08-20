@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function PromotionsCard({ img, span, title, button }) {
   return (
-    <div className="flex flex-col gap-2 max-w-[300px] sm:gap-[10px] w-full sm:min-w-[250px] md:min-w-[300px] p-3 sm:p-4 border border-[var(--glass-border)] rounded-[16px] sm:rounded-[20px]">
+    <div className="flex flex-col gap-2 w-full max-w-[300px] sm:gap-[10px] sm:min-w-[250px] md:min-w-[300px] md:w-auto p-3 sm:p-4 border border-[var(--glass-border)] rounded-[16px] sm:rounded-[20px]">
       <div className="relative rounded-lg overflow-hidden shadow-lg w-full max-w-full bg-gradient-to-br from-purple-900 to-blue-800 text-white">
         <div className="relative">
           <Image

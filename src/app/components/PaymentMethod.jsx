@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useLocale } from '../contexts/LocaleContext.jsx'
 
-const PaymentMethodTab = ({ 
+const PaymentMethod = ({ 
   type = 'deposit', 
   title = 'Депозит',
   methods = [],
@@ -144,4 +144,4 @@ const PaymentMethodTab = ({
   )
 }
 
-export default PaymentMethodTab
+export default PaymentMethod

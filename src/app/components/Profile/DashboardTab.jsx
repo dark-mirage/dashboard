@@ -2,26 +2,16 @@
 import ProfileCard from '../ProfileCard.jsx'
 import { useState } from 'react'
 import { useLocale } from '../../contexts/LocaleContext.jsx';
-
+import { useSelector } from "react-redux";
 
 export default function DashboardTab() {
+  const user = useSelector((state) => state.user);
   const [copied, setCopied] = useState(false)
   const { messages } = useLocale();
-  const myUserData = {
-    username: messages.userData.username,
-    phone: '+9189914566',
-    country: messages.userData.country,
-    loyaltyLevel: '1',
-    currency: 'EUR',
-    loyaltyPoints: 0,
-    mainBalance: 0,
-    bonusBalance: 0,
-    referralLink: 'https://referral.link/timur'
-  }
 
   const copyReferralLink = async () => {
     try {
-      await navigator.clipboard.writeText(myUserData.referralLink)
+      await navigator.clipboard.writeText(user.referralLink)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch (err) {
@@ -32,44 +22,42 @@ export default function DashboardTab() {
   return (
     <div className="flex flex-col bg-card gap-3 sm:gap-5 p-2 sm:p-2.5 border border-[var(--glass-border)] rounded-[16px] sm:rounded-[20px]">
       <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-yellow)]">{messages.dashboard.personalAccount}</h2>
-
       <div className="grid grid-cols-1 gap-4 sm:gap-6">
         <ProfileCard
           items={[
-            { label: `${messages.dashboard.username}`, value: myUserData.username },
-            { label: `${messages.dashboard.country}`, value: myUserData.country },
-            { label: `${messages.dashboard.phone}`, value: myUserData.phone },
-            { label: `${messages.dashboard.loyaltyLevel}`, value: myUserData.loyaltyLevel },
+            { label: `${messages.dashboard.username}`, value: user.firstName },
+            { label: `${messages.dashboard.country}`, value: user.country || 'Не выбрано' },
+            { label: `${messages.dashboard.phone}`, value: user.phone },
+            { label: `${messages.dashboard.loyaltyLevel}`, value: user.loyaltyLevel },
             { 
               label: `${messages.dashboard.accountCurrency}`, 
-              value: `€ ${myUserData.currency} (${myUserData.currency})`,
+              value: `€ ${user.currency} (${user.currency})`,
               valueClassName: 'text-base sm:text-lg'
             },
-            { label: `${messages.dashboard.loyaltyPoints}`, value: `${myUserData.loyaltyPoints} ❤️` },
+            { label: `${messages.dashboard.loyaltyPoints}`, value: `${user.loyaltyPoints} ❤️` },
           ]}
           gridCols="1 sm:2"
         />
       </div>
 
-      {/* Балансы */}
       <div className="grid grid-cols-1 gap-3 sm:gap-4">
         <ProfileCard
           items={[
             { 
               label: `${messages.dashboard.realBalance}`, 
-              value: `${myUserData.mainBalance.toFixed(2)} €`,
+              value: `${user.mainBalance.toFixed(2)} €`,
               valueClassName: 'text-lg sm:text-xl font-semibold',
               cardClassName: "bg-[rgba(45,38,31,1)] border border-[rgba(48,43,29,1)]"
             },
             { 
               label: `${messages.dashboard.bonusBalance}`, 
-              value: `${myUserData.bonusBalance.toFixed(2)} €`,
+              value: `${user.bonusBalance.toFixed(2)} €`,
               valueClassName: 'text-lg sm:text-xl font-semibold',
               cardClassName: "bg-[rgba(45,38,31,1)] border border-[rgba(48,43,29,1)]"
             },
             { 
               label: `${messages.dashboard.fs}`, 
-              value: `${myUserData.bonusBalance.toFixed(0)}`,
+              value: `${user.bonusBalance.toFixed(0)}`,
               valueClassName: 'text-lg sm:text-xl font-semibold',
               cardClassName: "bg-[rgba(45,38,31,1)] border border-[rgba(48,43,29,1)]"
             }
@@ -93,7 +81,7 @@ export default function DashboardTab() {
         <div className='flex flex-col sm:flex-row gap-2 sm:gap-[10px]'>
           <input
             type="text"
-            value={myUserData.referralLink}
+            value={user.referralLink}
             readOnly
             className="flex-1 bg-[rgba(29,29,34,255)] px-2 sm:px-3 py-1 sm:py-2 border border-gray-600 rounded-[10px] sm:rounded-[12px] text-white text-xs sm:text-sm input-glass"
           />

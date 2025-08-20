@@ -11,7 +11,7 @@ export default function PromotionsTab() {
       <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-yellow)]">
         {messages.promo.tabTitle}
       </h2>
-      <div className="flex flex-col flex-wrap lg:flex-nowrap sm:flex-row gap-4 sm:gap-[30px]">
+      <div className="flex flex-col items-center flex-wrap sm:flex-row gap-4 sm:gap-[30px] justify-center lg:justify-start lg:flex-nowrap">
         {messages.promo.cards.map((promo, idx) => (
           <PromotionsCard
             key={idx}

@@ -164,6 +164,7 @@
     "blocking": "Blocking",
     "blockAccount": "Block account",
     "blockAccountDesc": "Block account and prohibit deposits",
+    "selectCountry": "select country",
     "countries": {
       "germany": "Germany",
       "france": "France",
@@ -175,7 +176,11 @@
       "switzerland": "Switzerland",
       "sweden": "Sweden",
       "denmark": "Denmark"
-    }
+    },
+    "saved": "Saved!",
+    "savedSuccessfully": "Changes saved successfully!", 
+    "saveError": "Error saving changes",
+    "selectCountry": "Select country"
   },
   "register": {
     "title": "Registration",

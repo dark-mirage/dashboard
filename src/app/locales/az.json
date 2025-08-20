@@ -115,6 +115,7 @@
     "blocking": "Bloklama",
     "blockAccount": "Hesabı blokla",
     "blockAccountDesc": "Hesabı blokla və depozitləri qadağan et",
+    "selectCountry": "ölkə seçin",
     "countries": {
       "germany": "Almaniya",
       "france": "Fransa",
@@ -126,7 +127,12 @@
       "switzerland": "İsveçrə",
       "sweden": "İsveç",
       "denmark": "Danimarka"
-    }
+    },
+    "saving": "Yadda saxlanılır...",
+    "saved": "Saxlanıldı!",
+    "savedSuccessfully": "Dəyişikliklər uğurla yadda saxlanıldı!",
+    "saveError": "Dəyişiklikləri yadda saxlamaq mümkün olmadı",
+    "selectCountry": "Ölkəni seçin"
   },
   "register": {
     "title": "Qeydiyyat",

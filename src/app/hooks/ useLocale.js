@@ -20,7 +20,7 @@ export const LocaleProvider = ({ children, defaultLocale = "ru" }) => {
   }, [defaultLocale]);
 
   useEffect(() => {
-    if (!locale) return;
+    if (!locale) return;у
 
     setIsLoading(true);
     import(`../locales/${locale}/common.json`)

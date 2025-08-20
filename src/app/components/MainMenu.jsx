@@ -11,7 +11,7 @@ export default function MainMenu() {
   const activeTab = searchParams.get('tab') || 'profile';
 
   const menuItems = [
-    {
+  {
     key: 'profile',
     icon: '👤',
     label: messages.menu.profile,
