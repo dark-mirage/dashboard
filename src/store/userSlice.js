@@ -10,7 +10,7 @@ const initialState = {
   loyaltyPoints: 0,
   mainBalance: 0,
   bonusBalance: 0,
-  referralLink: "",
+  referralLink: "https://myproject.com/ref/ABC123XYZ",
   city: "",
   address: "",
   postalCode: "",
